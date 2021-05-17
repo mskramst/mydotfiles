@@ -1,0 +1,147 @@
+TERM: xterm-256color
+
+scrolling:
+  history: 5000
+
+window:
+  padding:
+    x: 6
+    y: 6
+
+colors:
+  # Default colors
+  primary:
+    background: '#0A0E14'
+    foreground: '#B3B1AD'
+
+  # Normal colors
+  normal:
+    black: '#01060E'
+    red: '#EA6C73'
+    green: '#91B362'
+    yellow: '#F9AF4F'
+    blue: '#53BDFA'
+    magenta: '#FAE994'
+    cyan: '#90E1C6'
+    white: '#C7C7C7'
+
+  # Bright colors
+  bright:
+    black: '#686868'
+    red: '#F07178'
+    green: '#C2D94C'
+    yellow: '#FFB454'
+    blue: '#59C2FF'
+    magenta: '#FFEE99'
+    cyan: '#95E6CB'
+    white: '#FFFFFF'
+
+font:
+  family: Inconsolata Nerd Font
+  #  family: Inconsolata
+  size: 10.0
+
+selection:
+  text: '0x292d3e'
+  background: '0xbbc5ff'
+
+offset:
+  x: 5
+  y: 5
+
+background_opacity: 1.0
+
+key_bindings:
+  - key: W
+    mods: Command
+    action: ToggleFullscreen
+  - key: N
+    mods: Command|Shift
+    action: SpawnNewInstance
+  - key: F
+    mods: Command|Shift
+    action: ToggleFullscreen
+  - key: Equals
+    mods: Command|Shift
+    action: IncreaseFontSize
+  - key: Minus
+    mods: Command|Shift
+    action: DecreaseFontSize
+  - key: Back
+    mods: Super
+    chars: "\x15"
+  - key: Back
+    mods: Control
+    chars: "\x17"
+  - key: Back
+    mods: Alt
+    chars: "\ed"
+  - key: Left
+    mods: Super
+    chars: "\e[1;5D"
+  - key: Right
+    mods: Super
+    chars: "\e[1;5C"
+  - key: Left
+    mods: Control
+    chars: "\e[1;5D"
+  - key: Right
+    mods: Control
+    chars: "\e[1;5C"
+  - key: Left
+    mods: Alt
+    chars: "\e[1;5D"
+  - key: Right
+    mods: Alt
+    chars: "\e[1;5C"
+  - key: Space
+    mods: Command|Control
+    action: ToggleViMode
+  - key: Left
+    mods: Command|Option
+    chars: "\x02p"
+  - key: Right
+    mods: Command|Option
+    chars: "\x02n"
+  - key: Left
+    mods: Command|Shift
+    chars: "\x02p"
+  - key: Right
+    mods: Command|Shift
+    chars: "\x02n"
+  - key: Up
+    mods: Command|Option
+    chars: "\x02k"
+  - key: Down
+    mods: Command|Option
+    chars: "\x02j"
+  - key: F
+    mods: Option
+    chars: "\x02/"
+  - key: Key1
+    mods: Command
+    chars: "\x021"
+  - key: Key2
+    mods: Command
+    chars: "\x022"
+  - key: Key3
+    mods: Command
+    chars: "\x023"
+  - key: Key4
+    mods: Command
+    chars: "\x024"
+  - key: Key5
+    mods: Command
+    chars: "\x025"
+  - key: Key6
+    mods: Command
+    chars: "\x026"
+  - key: Key7
+    mods: Command
+    chars: "\x027"
+  - key: Key8
+    mods: Command
+    chars: "\x028"
+  - key: Key9
+    mods: Command
+    chars: "\x029"
