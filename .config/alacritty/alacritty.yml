@@ -12,7 +12,7 @@ colors:
   # Default colors
   primary:
     background: '#0A0E14'
-    foreground: '#B3B1AD'
+    foreground: '#FFFFFF'
 
   # Normal colors
   normal:
@@ -23,7 +23,7 @@ colors:
     blue: '#53BDFA'
     magenta: '#FAE994'
     cyan: '#90E1C6'
-    white: '#C7C7C7'
+    white: '#FFFFFF'
 
   # Bright colors
   bright:
