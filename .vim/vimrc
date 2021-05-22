@@ -81,11 +81,11 @@ if has('termguicolors')
 endif
 
 "theming 
-colorscheme ayu 
+colorscheme onedark 
 
-let g:airline_theme = 'ayu'
-let g:lightline = { 'colorscheme': 'ayu' }
-let ayucolor ='dark'
+let g:airline_theme = 'onedark'
+let g:lightline = { 'colorscheme': 'onedark' }
+"let ayucolor ='dark'
 " For dark version
 set background=dark
 set term=xterm
