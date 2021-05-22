@@ -8,6 +8,8 @@ window:
     x: 6
     y: 6
 
+decorations: none
+
 colors:
   # Default colors
   primary:
