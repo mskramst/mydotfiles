@@ -1,4 +1,4 @@
-"  Mike Skramstad 
+
 "  http://www.youtube.com
 "  http://www.gitlab.com/mskramst
 " 
@@ -82,10 +82,10 @@ if has('termguicolors')
 endif
 
 "theming 
-colorscheme gruvbox 
+colorscheme ayu 
 
-let g:airline_theme = 'gruvbox'
-let g:lightline = { 'colorscheme': 'gruvbox' }
+let g:airline_theme = 'ayu'
+let g:lightline = { 'colorscheme': 'ayu' }
 "let ayucolor ='dark'
 " For dark version
 set background=dark
