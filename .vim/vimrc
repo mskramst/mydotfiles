@@ -61,6 +61,7 @@ call plug#begin('~/.vim/plugged')
 
 "{{Syntax Highlighting and Colors}}
     Plug 'ap/vim-css-color'                          "Displays color in CSS files" 
+    Plug 'morhetz/gruvbox'                           "Gruvbox"
     Plug 'drewtempelmeyer/palenight.vim'
     Plug 'joshdick/onedark.vim'
     Plug 'ayu-theme/ayu-vim'
@@ -81,10 +82,10 @@ if has('termguicolors')
 endif
 
 "theming 
-colorscheme onedark 
+colorscheme gruvbox 
 
-let g:airline_theme = 'onedark'
-let g:lightline = { 'colorscheme': 'onedark' }
+let g:airline_theme = 'gruvbox'
+let g:lightline = { 'colorscheme': 'gruvbox' }
 "let ayucolor ='dark'
 " For dark version
 set background=dark
