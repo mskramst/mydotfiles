@@ -3,10 +3,11 @@
 "  http://www.gitlab.com/mskramst
 " 
 "        
-" A customized vimrc file      
+" A customized nvim file      
 
 syntax on
-filetype indent on 
+filetype off 
+set nocompatible
 set showmatch                                       "convenient for showing the matching braces"
 set relativenumber                                  "show line numbers and relative value for easy navigation"
 set hidden                                          "allows for file buffers
@@ -27,53 +28,47 @@ set undofile                                        "Turns on saving of undo/red
 
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
-set runtimepath^=~/.vim/bundle/ctrlp.vim            "Sets up CTRL P for easy file switching"
-
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
 "{{Plugins installed into Plugged folder}}
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 "{{The Basics}}
-    Plug 'plasticboy/vim-markdown'                   "Allows for folding and collapsing of markdown files" 
     Plug 'mbbill/undotree'                           "Shows undo history"
     Plug 'jiangmiao/auto-pairs'                      "Create closing braces, parentheses etc." 
-    Plug 'vim-utils/vim-man'                         "Vim manual
+    Plug 'vim-utils/vim-man'                         "Vim manual"
     Plug 'sheerun/vim-polyglot'                      "Programming language support"
     Plug 'chase/vim-ansible-yaml'                    "Support for yaml files"
+    Plug 'plasticboy/vim-markdown'                   "Allows for folding and collapsing of markdown files" 
+" Used for showing preview of markdown files by pressing F8
+    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 "{{Productivity}}
     Plug 'mattn/emmet-vim'                           "Allows for Emmet commands (see https://docs.emmet.io/)"
     Plug 'stsewd/fzf-checkout.vim'                   "Creates checkout boxes"
-    Plug 'tomtom/tcomment_vim'                       "Convenient method for commemnting out lines of code 'gcc'"
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  "Interactive file finder"
     Plug 'junegunn/fzf.vim'
+    Plug 'tomtom/tcomment_vim'                       "Convenient method for commemnting out lines of code 'gcc'"
  
 "{{Pope Plugins}}
     Plug 'tpope/vim-fugitive'                        "Git functionality in VIM"
-    Plug 'vim-airline/vim-airline'                   "Creates bottom airline bar in vim"
-    Plug 'vim-airline/vim-airline-themes'            "Allows for options for airline themes"
     Plug 'tpope/vim-surround'                        "Allows to change surround values (i.e. cs"' would swtich " to ''"
     Plug 'tpope/vim-commentary'                      "Great for commenting out code (gc in visual mode)
 
 "{{Syntax Highlighting and Colors}}
     Plug 'ap/vim-css-color'                          "Displays color in CSS files" 
+    Plug 'prettier/vim-prettier', { 'do': 'yarn install' }    "Useful for formatting code correctly"
+
+"{{Theming}}
+    Plug 'vim-airline/vim-airline'                   "Creates bottom airline bar in vim"
+    Plug 'vim-airline/vim-airline-themes'            "Allows for options for airline themes"
     Plug 'sainnhe/gruvbox-material'                  "Vim Color Scheme like Oceanic-Next"
     Plug 'drewtempelmeyer/palenight.vim'
     Plug 'joshdick/onedark.vim'
     " post install (yarn install | npm install) then load plugin only for editing supported files
-    Plug 'prettier/vim-prettier', { 'do': 'yarn install' }    "Useful for formatting code correctly"
 
 "{{File Management}}
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'tweekmonster/gofmt.vim'
 
-" Used for showing preview of markdown files by pressing F8
-    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 call plug#end()
 
 if has('termguicolors')
