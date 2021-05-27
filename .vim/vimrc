@@ -39,6 +39,7 @@ call plug#begin('~/.vim/plugged')
 
 "{{The Basics}}
     Plug 'plasticboy/vim-markdown'                   "Allows for folding and collapsing of markdown files" 
+    Plug 'shime/vim-livedown'
     Plug 'mbbill/undotree'                           "Shows undo history"
     Plug 'jiangmiao/auto-pairs'                      "Create closing braces, parentheses etc." 
     Plug 'vim-utils/vim-man'                         "Vim manual
@@ -113,6 +114,7 @@ autocmd Filetype markdown let b:autopairs_enabled = 0
 
 "{{Mapping}}
 map <silent> <F8> <Plug>MarkdownPreview
+nmap gm :LivedownToggle
 
 " Quickly insert an empty new line without entering insert mode
 nnoremap <silent> [<space>  :<c-u>put!=repeat([''],v:count)<bar>']+1<cr>
@@ -131,7 +133,7 @@ nnoremap <leader>gs :G<CR>
 nnoremap <leader>gc :GCheckout<CR>                                            
 
 "{{Personal Quick Actions}}
-nnoremap <leader>not :e ~/startanew/coding/vim.md<CR>
+nnoremap <leader>not :e ~/startanew/software/vim.md<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>gf :Explore<CR>
 nnoremap <leader>pr :Prettier<CR>

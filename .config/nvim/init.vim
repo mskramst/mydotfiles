@@ -38,6 +38,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'sheerun/vim-polyglot'                      "Programming language support"
     Plug 'chase/vim-ansible-yaml'                    "Support for yaml files"
     Plug 'plasticboy/vim-markdown'                   "Allows for folding and collapsing of markdown files" 
+
 " Used for showing preview of markdown files by pressing F8
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
@@ -47,6 +48,9 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  "Interactive file finder"
     Plug 'junegunn/fzf.vim'
     Plug 'tomtom/tcomment_vim'                       "Convenient method for commemnting out lines of code 'gcc'"
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'kabouzeid/nvim-lspinstall'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
  
 "{{Pope Plugins}}
     Plug 'tpope/vim-fugitive'                        "Git functionality in VIM"
@@ -66,10 +70,11 @@ call plug#begin('~/.config/nvim/plugged')
     " post install (yarn install | npm install) then load plugin only for editing supported files
 
 "{{File Management}}
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'tweekmonster/gofmt.vim'
 
 call plug#end()
+
+" minpac
 
 if has('termguicolors')
   set termguicolors
@@ -78,6 +83,7 @@ endif
 "theming 
 let g:airline_theme = 'palenight'
 let g:lightline = { 'colorscheme': 'onedark' }
+
 
 "colorscheme gruvbox-material
 colorscheme palenight
