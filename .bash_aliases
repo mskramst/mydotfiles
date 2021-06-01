@@ -1,3 +1,5 @@
+source ~/.bash_git
+
 # my aliases
 alias ll='ls -alF'
 alias la='ls -A'
