@@ -63,7 +63,7 @@ if has('termguicolors')
 endif
 
 "theming 
-let g:airline_theme = 'gruvbox'
+"let g:airline_theme = 'gruvbox'
 let g:lightline = { 'colorscheme': 'gruvbox' }
 
 "colorscheme gruvbox-material

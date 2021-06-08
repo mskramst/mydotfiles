@@ -5,8 +5,8 @@ scrolling:
 
 window:
   padding:
-    x: 6
-    y: 6
+    x: 10
+    y: 10 
 
 decorations: none
 
@@ -54,6 +54,12 @@ offset:
 background_opacity: 1.0
 
 key_bindings:
+  - key: C
+    mods: Control|Shift
+    action: Copy
+  - key: P
+    mods: Control|Shift
+    action: Paste
   - key: W
     mods: Command
     action: ToggleFullscreen
