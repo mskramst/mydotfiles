@@ -22,6 +22,7 @@ set nu                                              "Display line numbers"
 set smartcase                                       "Helps with searching text set noswapfile   
 set undodir=~/.vim/undodir                          "Stores undohistory in undodirectory  for edited files for future sessions"
 set undofile                                        "Turns on saving of undo/redo history"
+set pumheight=7                                     "Limits number of suggestions in coc
 
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
@@ -42,7 +43,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'plasticboy/vim-markdown'                   "Allows for folding and collapsing of markdown files" 
     Plug 'shime/vim-livedown'
     Plug 'mbbill/undotree'                           "Shows undo history"
-    Plug 'jiangmiao/auto-pairs'                      "Create closing braces, parentheses etc." 
+"    Plug 'jiangmiao/auto-pairs'                      "Create closing braces, parentheses etc." 
     Plug 'vim-utils/vim-man'                         "Vim manual
     Plug 'sheerun/vim-polyglot'                      "Programming language support"
     Plug 'chase/vim-ansible-yaml'                    "Support for yaml files"
@@ -114,6 +115,8 @@ nnoremap <F5> :UndotreeToggle<cr>
 autocmd FileType markdown let b:coc_suggest_disable = 1
 autocmd Filetype markdown let b:autopairs_enabled = 0
 
+let g:AutoPairsFlyMode = 0
+
 "{{Personal Quick Actions}}
 nnoremap <leader>not :e ~/startanew/software/vim.md<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
@@ -126,10 +129,6 @@ imap jj <Esc>
 map <silent> <F8> <Plug>MarkdownPreview
 nmap gm :LivedownToggle
 
-" Quickly insert an empty new line without entering insert mode
-nnoremap <silent> [<space>  :<c-u>put!=repeat([''],v:count)<bar>']+1<cr>
-nnoremap <silent> ]<space>  :<c-u>put =repeat([''],v:count)<bar>'[-1<cr>
-
 "{{Quick actions}}
 nnoremap -d dd
 nnoremap -c ddO
@@ -139,9 +138,10 @@ nnoremap <leader>so :so %<CR>
 nnoremap <leader>vim :e ~/.vim/vimrc<CR>
 
 "{{Git related commands}}
-nnoremap <leader>gs :G<CR>                                                       
-nnoremap <leader>gc :GCheckout<CR>                                            
-
+nmap <leader>gs :G<CR>                                                       
+nmap <leader>gc :GCheckout<CR>                                            
+nmap <leader>gu :diffget //2<CR>
+nmap <leader>gh :diffget //3<CR>
 
 "{{Split Navigation}}
 map <C-h> <C-w>h
@@ -150,7 +150,8 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 nnoremap <leader>o :on
 nnoremap <leader>q :q
-
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
 "{{tcomment Settings}}
 
 " Prevent tcomment from making a zillion mappings (we just want the operator).
