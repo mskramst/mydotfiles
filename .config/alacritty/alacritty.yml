@@ -6,7 +6,7 @@ scrolling:
 window:
   padding:
     x: 10
-    y: 10 
+    y: 10
 
 decorations: none
 
@@ -14,7 +14,7 @@ colors:
   # Default colors
   primary:
     background: '#0A0E14'
-    foreground: '#FFFFFF'
+    foreground: '#B3B1AD'
 
   # Normal colors
   normal:
@@ -22,10 +22,10 @@ colors:
     red: '#EA6C73'
     green: '#91B362'
     yellow: '#F9AF4F'
-    blue: '#53BDFA'
+    blue: '#558599'
     magenta: '#FAE994'
     cyan: '#90E1C6'
-    white: '#FFFFFF'
+    white: '#C7C7C7'
 
   # Bright colors
   bright:

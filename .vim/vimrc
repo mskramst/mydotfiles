@@ -23,6 +23,7 @@ set smartcase                                       "Helps with searching text s
 set undodir=~/.vim/undodir                          "Stores undohistory in undodirectory  for edited files for future sessions"
 set undofile                                        "Turns on saving of undo/redo history"
 set pumheight=7                                     "Limits number of suggestions in coc
+set clipboard=unnamed
 
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
@@ -73,7 +74,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'prettier/vim-prettier', { 'do': 'yarn install' }    "Useful for formatting code correctly"
 
 "{{File Management}}
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'tweekmonster/gofmt.vim'
 
 " Used for showing preview of markdown files by pressing F8
