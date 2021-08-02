@@ -10,6 +10,9 @@ alias scripts='cd ~/startanew/scripts'
 alias bext='vim ~/.bashrc_ext'
 alias balias='vim ~/.bashrc_aliases'
 alias bhistory='vim ~/.bash_history'
+alias alac='vim ~/.config/alacritty/alacritty.yml'
+alias push='git push origin master'
+alias pushssh='git push ssh master'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

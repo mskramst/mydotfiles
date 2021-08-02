@@ -22,7 +22,7 @@ colors:
     red: '#EA6C73'
     green: '#91B362'
     yellow: '#F9AF4F'
-    blue: '#558599'
+    blue: '#5092d9'
     magenta: '#FAE994'
     cyan: '#90E1C6'
     white: '#C7C7C7'
@@ -39,8 +39,7 @@ colors:
     white: '#FFFFFF'
 
 font:
-  family: Inconsolata Nerd Font
-  #  family: Inconsolata
+  family: Fira Code 
   size: 10.0
 
 selection:
