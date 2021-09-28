@@ -40,7 +40,7 @@ colors:
 
 font:
   family: Fira Code 
-  size: 10.0
+  size: 9.0
 
 selection:
   text: '0x292d3e'
@@ -50,7 +50,7 @@ offset:
   x: 5
   y: 5
 
-background_opacity: 1.0
+background_opacity: 1.0 
 
 key_bindings:
   - key: C
