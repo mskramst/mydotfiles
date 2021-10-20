@@ -14,9 +14,7 @@ set path+=**                                        "sets path to current direct
 set noerrorbells                                    "Turn off sound when errors made"
 set colorcolumn=80                                  "Create a clear 80 char limit for coding"
 set textwidth=80                                    "Set default settings for tabs, width, indent" 
-set shiftwidth=4                                    "Used to determine number of spaces to indent when you use >> or <<
-set expandtab                                       "To insert space characters when tab key is pressed
-set tabstop=4 softtabstop=4                         "Used to determine spaces when tab key is pressed
+set autoindent
 set nu                                              "Display line numbers"
 set relativenumber                                  "show line numbers and relative value for easy navigation"
 set smartcase                                       "Helps with searching text set noswapfile   
