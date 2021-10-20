@@ -15,6 +15,7 @@ alias push='git push origin master'
 alias pushssh='git push ssh master'
 alias dlvids='cd //media/stuff/DATA/dlvids'
 alias i3conf='vim ~/.config/i3/config'
+alias dlvids='cd //media/stuff/DATA/dlvids'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
