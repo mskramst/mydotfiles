@@ -1,5 +1,4 @@
-"  http://www.youtube.com
-"  http://www.gitlab.com/mskramst
+"  http://www.github.com/mskramst
 " 
 "        
 " A customized vimrc file      
@@ -22,7 +21,7 @@ set undodir=~/.vim/undodir                          "Stores undohistory in undod
 set undofile                                        "Turns on saving of undo/redo history"
 set pumheight=7                                     "Limits number of suggestions in coc
 set viminfo='20,<1000,s1000                         "prevents truncating yanks, deletes
-set visualbell                                      "disables annoying audio bell in WSL"
+set belloff=all
 
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
