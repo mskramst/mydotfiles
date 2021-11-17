@@ -1,6 +1,8 @@
-"  http://www.gitlab.com/mskramst
-"
-"" A customized vimrc file
+"  http://www.github.com/mskramst
+"  Mike
+" 
+"        
+" A customized vimrc file      
 
 syntax on
 filetype indent on
@@ -19,6 +21,7 @@ set undodir=~/.vim/undodir                          "Stores undohistory in undod
 set undofile                                        "Turns on saving of undo/redo history"
 set pumheight=7                                     "Limits number of suggestions in coc
 set viminfo='20,<1000,s1000                         "prevents truncating yanks, deletes
+set belloff=all
 set textwidth=80                                    "Set default settings for tabs, width, indent"
 set tabstop=2
 set softtabstop=2
