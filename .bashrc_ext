@@ -12,6 +12,12 @@ case $- in
       *) return;;
 esac
 
+# ------------------------ environmental variables -------------------------------
+
+export GITUSER="$USER"
+export SNIPPETS="$HOME/repos/github.com/$GITUSER/snippets"
+export GHREPOS="$HOME/repos/github.com/$GITUSER/"
+export NOTES="$HOME/repos/github.com/$GITUSER/startanew"
 # ----------------------------- aliases -------------------------------
 
 if [ -f ~/.bash_aliases ]; then

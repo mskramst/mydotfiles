@@ -16,9 +16,8 @@ alias pushssh='git push ssh master'
 alias dlvids='cd //media/stuff/DATA/dlvids'
 alias i3conf='vim ~/.config/i3/config'
 alias dlvids='cd //media/stuff/DATA/dlvids'
-alias gpom='git push origin master'
-alias gpsm='git push ssh master'
-
+alias myctags='ctags -R .'
+alias gs="git status"
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'

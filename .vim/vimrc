@@ -1,8 +1,7 @@
 "  http://www.github.com/mskramst
 "  Mike
-" 
-"        
-" A customized vimrc file      
+"
+" A customized vimrc file
 
 syntax on
 filetype indent on
@@ -79,10 +78,10 @@ set term=xterm
 let mapleader = " "
 
 " Plug-in configurations
+autocmd Filetype markdown let b:autopairs_enabled = 0
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
 let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.3 } }
 let $FZF_DEFAULT_OPTS='--reverse'
-autocmd Filetype markdown let b:autopairs_enabled = 0
 let g:AutoPairsFlyMode = 0
 let g:vim_markdown_folding_disabled = 1
 
@@ -90,15 +89,15 @@ let g:vim_markdown_folding_disabled = 1
 nnoremap <leader>gf :Files<CR>
 
 " Move back and forward through open buffers
-nnoremap <leader>bp :bp<CR>
-nnoremap <leader>bn :bn<CR>
-
 map <silent> <F8> <Plug>MarkdownPreview
 
 "{{Vim Related Actions}}
 nnoremap <leader>so :so %<CR>
 nnoremap <leader>vim :e ~/.vim/vimrc<CR>
 nnoremap <leader>not :e ~/startanew/software/vim.md<CR>
+nnoremap <leader>bp :bp<CR>
+nnoremap <leader>bn :bn<CR>
+nnoremap <leader>test :-1read ~/startanew/snippets/test.snippet<CR>
 
 "{{Git related commands}}
 nmap <leader>gs :G<CR>
@@ -116,3 +115,7 @@ nnoremap <leader>q :q
 
 highlight RedundantSpaces ctermbg=yellow guibg=yellow
 match RedundantSpaces /\s\+$/
+
+" abbreviations
+abbr _SH #!/bin/bash
+
