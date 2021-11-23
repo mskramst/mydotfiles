@@ -18,6 +18,8 @@ export GITUSER="$USER"
 export SNIPPETS="$HOME/repos/github.com/$GITUSER/snippets"
 export GHREPOS="$HOME/repos/github.com/$GITUSER/"
 export NOTES="$HOME/repos/github.com/$GITUSER/startanew"
+export PATH="$HOME/repos/github.com/$GITUSER/startanew/scripts:$PATH"
+
 # ----------------------------- aliases -------------------------------
 
 if [ -f ~/.bash_aliases ]; then
@@ -56,27 +58,38 @@ pathprepend() {
   done
 }
 
-# override as needed in .bashrc_{personal,private,work}
-# several utilities depend on SCRIPTS being in a github repo
-#export SCRIPTS=~/startanew/scripts
+export CDPATH=.:\
+~/repos/github.com:\
+~/repos/github.com/$GITUSER:\
+~/repos/github.com/$GITUSER/startanew:\
+~/repos:\
+~
+
 #mkdir -p "$SCRIPTS" &>/dev/null
 
-export PATH="~/startanew/scripts:$PATH"
+# go up x number of dirs
+goup() {
+  num=$1
+  while [ $num -ne 0  ];do
+    cd ..
+    num=$( expr $num - 1   )
+  done
+}
 
 # ------------------------------- pager ------------------------------
 
-#if test -x /usr/bin/lesspipe; then
-#  export LESSOPEN="| /usr/bin/lesspipe %s";
-#  export LESSCLOSE="/usr/bin/lesspipe %s %s";
-#fi
+if test -x /usr/bin/lesspipe; then
+  export LESSOPEN="| /usr/bin/lesspipe %s";
+  export LESSCLOSE="/usr/bin/lesspipe %s %s";
+fi
 
-#export LESS_TERMCAP_mb="[35m" # magenta
-#export LESS_TERMCAP_md="[33m" # yellow
-#export LESS_TERMCAP_me="" # "0m"
-#export LESS_TERMCAP_se="" # "0m"
-#export LESS_TERMCAP_so="[34m" # blue
-#export LESS_TERMCAP_ue="" # "0m"
-#export LESS_TERMCAP_us="[4m"  # underline
+export LESS_TERMCAP_mb="[35m" # magenta
+export LESS_TERMCAP_md="[33m" # yellow
+export LESS_TERMCAP_me="" # "0m"
+export LESS_TERMCAP_se="" # "0m"
+export LESS_TERMCAP_so="[34m" # blue
+export LESS_TERMCAP_ue="" # "0m"
+export LESS_TERMCAP_us="[4m"  # underline
 
 # ------------------------------- colors -------------------------------
 
