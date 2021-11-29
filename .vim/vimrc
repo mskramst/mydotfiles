@@ -1,16 +1,12 @@
-"  http://www.github.com/mskramst
-"  Mike
-"
-" A customized vimrc file
+"{{ http://www.github.com/mskramst }}
+"{{ A customized vimrc file }}
 
 syntax on
 filetype indent on
 set showmatch                                       "convenient for showing the matching braces"
 set hidden                                          "allows for file buffers
 set wildmenu                                        "creates a wild menu for toggling between files"
-set wildignore+=**/node_modules/**                  "ignore node_modules folder"
 set path+=**                                        "sets path to current directory"
-set noerrorbells                                    "Turn off sound when errors made"
 set colorcolumn=80                                  "Create a clear 80 char limit for coding"
 set autoindent
 set nu                                              "Display line numbers"
@@ -20,6 +16,7 @@ set undodir=~/.vim/undodir                          "Stores undohistory in undod
 set undofile                                        "Turns on saving of undo/redo history"
 set pumheight=7                                     "Limits number of suggestions in coc
 set viminfo='20,<1000,s1000                         "prevents truncating yanks, deletes
+set noerrorbells                                    "Turn off sound when errors made"
 set belloff=all
 set textwidth=80                                    "Set default settings for tabs, width, indent"
 set tabstop=2
@@ -28,6 +25,8 @@ set expandtab
 set shiftwidth=2
 set ruler
 set wrapscan
+
+set wildignore+=**/node_modules/**                  "ignore node_modules folder"
 
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
@@ -42,8 +41,11 @@ call plug#begin('~/.vim/plugged')
 
 "{{The Basics}}
     Plug 'plasticboy/vim-markdown'                   "Allows for folding and collapsing of markdown files"
-    Plug 'jiangmiao/auto-pairs'                      "Create closing braces, parentheses etc."
+    "Plug 'jiangmiao/auto-pairs'                      "Create closing braces, parentheses etc."
     Plug 'sheerun/vim-polyglot'
+"    Plug 'vim-pandoc/vim-pandoc'
+"    Plug 'vim-pandoc/vim-pandoc-syntax' 
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 "{{Productivity}}
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  "Interactive file finder"
@@ -53,11 +55,12 @@ call plug#begin('~/.vim/plugged')
 "{{Pope Plugins}}
     Plug 'tpope/vim-fugitive'                        "Git functionality in VIM"
     Plug 'tpope/vim-surround'                        "Allows to change surround values (i.e. cs"' would swtich " to ''"
-    Plug 'vim-airline/vim-airline'                   "Creates bottom airline bar in vim"
-    Plug 'vim-airline/vim-airline-themes'            "Allows for options for airline themes"
 
 "{{Syntax Highlighting and Colors}}
     Plug 'ayu-theme/ayu-vim'
+    Plug 'morhetz/gruvbox'
+    Plug 'vim-airline/vim-airline'                   "Creates bottom airline bar in vim"
+    Plug 'vim-airline/vim-airline-themes'            "Allows for options for airline themes"
 
 call plug#end()
 
@@ -65,39 +68,37 @@ if has('termguicolors')
   set termguicolors
 endif
 
-"theming
+"{{Theming}}
 colorscheme ayu
 
 let g:airline_theme = 'ayu'
 let g:lightline = { 'colorscheme': 'ayu' }
 
-" For dark version
+"{{For dark version}}
 set background=dark
 set term=xterm
 
 let mapleader = " "
 
-" Plug-in configurations
+"{{ Plug-in configurations }}
 autocmd Filetype markdown let b:autopairs_enabled = 0
+let g:vim_markdown_folding_disabled = 1
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
+au FileType markdown setlocal foldlevel=99
 let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.3 } }
 let $FZF_DEFAULT_OPTS='--reverse'
 let g:AutoPairsFlyMode = 0
-let g:vim_markdown_folding_disabled = 1
 
 "{{Personal Quick Actions}}
-nnoremap <leader>gf :Files<CR>
-
-" Move back and forward through open buffers
-map <silent> <F8> <Plug>MarkdownPreview
-
-"{{Vim Related Actions}}
 nnoremap <leader>so :so %<CR>
 nnoremap <leader>vim :e ~/.vim/vimrc<CR>
 nnoremap <leader>not :e ~/startanew/software/vim.md<CR>
+nnoremap <leader>term :bo term<CR>
 nnoremap <leader>bp :bp<CR>
 nnoremap <leader>bn :bn<CR>
 nnoremap <leader>test :-1read ~/startanew/snippets/test.snippet<CR>
+nnoremap <leader>tit :.!htitle<CR>
+nnoremap <leader>gf :Files<CR>
 
 "{{Git related commands}}
 nmap <leader>gs :G<CR>
@@ -114,8 +115,9 @@ nnoremap <leader>o :on
 nnoremap <leader>q :q
 
 highlight RedundantSpaces ctermbg=yellow guibg=yellow
+highlight ColorColumn guibg=#606060
 match RedundantSpaces /\s\+$/
 
-" abbreviations
+"{{ Abbreviations }}
 abbr _SH #!/bin/bash
 

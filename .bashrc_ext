@@ -15,10 +15,12 @@ esac
 # ------------------------ environmental variables -------------------------------
 
 export GITUSER="$USER"
-export SNIPPETS="$HOME/repos/github.com/$GITUSER/snippets"
+export SNIPPETS="$HOME/repos/github.com/$GITUSER/startanew/snippets"
+export SCRIPTS="$HOME/repos/github.com/$GITUSER/startanew/scripts"
 export GHREPOS="$HOME/repos/github.com/$GITUSER/"
-export NOTES="$HOME/repos/github.com/$GITUSER/startanew"
+export NOTES="$HOME/repos/github.com/$GITUSER/startanew/writing/notes"
 export PATH="$HOME/repos/github.com/$GITUSER/startanew/scripts:$PATH"
+export HRULEWIDTH=73
 
 # ----------------------------- aliases -------------------------------
 
@@ -63,6 +65,7 @@ export CDPATH=.:\
 ~/repos/github.com/$GITUSER:\
 ~/repos/github.com/$GITUSER/startanew:\
 ~/repos:\
+~/Code\
 ~
 
 #mkdir -p "$SCRIPTS" &>/dev/null
