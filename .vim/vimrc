@@ -46,6 +46,7 @@ call plug#begin('~/.vim/plugged')
 "    Plug 'vim-pandoc/vim-pandoc'
 "    Plug 'vim-pandoc/vim-pandoc-syntax' 
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+    Plug 'StanAngeloff/php.vim'
 
 "{{Productivity}}
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  "Interactive file finder"
@@ -69,10 +70,11 @@ if has('termguicolors')
 endif
 
 "{{Theming}}
-colorscheme ayu
+colorscheme gruvbox 
 
-let g:airline_theme = 'ayu'
-let g:lightline = { 'colorscheme': 'ayu' }
+let g:gruvbox_contrast_dark = 'medium'
+let g:airline_theme = 'gruvbox'
+let g:lightline = { 'colorscheme': 'gruvbox' }
 
 "{{For dark version}}
 set background=dark
@@ -105,6 +107,7 @@ nmap <leader>gs :G<CR>
 nmap <leader>gc :GCheckout<CR>
 nmap <leader>gu :diffget //2<CR>
 nmap <leader>gh :diffget //3<CR>
+map <leader>code i```<CR><CR>```
 
 "{{Split Navigation}}
 map <C-h> <C-w>h
@@ -115,9 +118,19 @@ nnoremap <leader>o :on
 nnoremap <leader>q :q
 
 highlight RedundantSpaces ctermbg=yellow guibg=yellow
-highlight ColorColumn guibg=#606060
 match RedundantSpaces /\s\+$/
+highlight ColorColumn guibg=#606060
 
 "{{ Abbreviations }}
 abbr _SH #!/bin/bash
+
+" Disable caps lock after leaving insert mode
+au InsertLeave * call TurnOffCaps()
+
+function TurnOffCaps()
+    let capsState = matchstr(system('xset -q'), '00: Caps Lock:\s\+\zs\(on\|off\)\ze')
+    if capsState == 'on'
+        silent! execute ':!xdotool key Caps_Lock'
+    endif
+endfunction
 
