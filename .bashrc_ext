@@ -14,19 +14,50 @@ esac
 
 # ------------------------ environmental variables -------------------------------
 
-export GITUSER="$USER"
+export GITUSER="mskramst"
 export SNIPPETS="$HOME/repos/github.com/$GITUSER/startanew/snippets"
 export SCRIPTS="$HOME/repos/github.com/$GITUSER/startanew/scripts"
 export GHREPOS="$HOME/repos/github.com/$GITUSER/"
 export NOTES="$HOME/repos/github.com/$GITUSER/startanew/writing/notes"
 export PATH="$HOME/repos/github.com/$GITUSER/startanew/scripts:$PATH"
+export DESKTOP="$HOME/Desktop"
+export DOCUMENTS="$HOME/Documents"
+export DOWNLOADS="$HOME/Downloads"
+export TEMPLATES="$HOME/Templates"
+export PUBLIC="$HOME/Public"
+export PRIVATE="$HOME/Private"
+export PICTURES="$HOME/Pictures"
+export MUSIC="$HOME/Music"
+export VIDEOS="$HOME/Videos"
+export CODE="$HOME/Code"
 export HRULEWIDTH=73
+export EDITOR=vi
+export EDITOR_PREFIX=vi
+export VISUAL=vi
+export TERM=xterm-256color
+export LESS_TERMCAP_mb="[35m" # magenta
+export LESS_TERMCAP_md="[33m" # yellow
+export LESS_TERMCAP_me="" # "0m"
+export LESS_TERMCAP_se="" # "0m"
+export LESS_TERMCAP_so="[34m" # blue
+export LESS_TERMCAP_ue="" # "0m"
+export LESS_TERMCAP_us="[4m"  # underline
 
 # ----------------------------- aliases -------------------------------
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
+man() {
+    LESS_TERMCAP_md=$'\e[01;31m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+    LESS_TERMCAP_so=$'\e[01;44;33m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[01;32m' \
+    command man "$@"
+}
 
 # ----------------------------- history -------------------------------
 
@@ -85,14 +116,6 @@ if test -x /usr/bin/lesspipe; then
   export LESSOPEN="| /usr/bin/lesspipe %s";
   export LESSCLOSE="/usr/bin/lesspipe %s %s";
 fi
-
-export LESS_TERMCAP_mb="[35m" # magenta
-export LESS_TERMCAP_md="[33m" # yellow
-export LESS_TERMCAP_me="" # "0m"
-export LESS_TERMCAP_se="" # "0m"
-export LESS_TERMCAP_so="[34m" # blue
-export LESS_TERMCAP_ue="" # "0m"
-export LESS_TERMCAP_us="[4m"  # underline
 
 # ------------------------------- colors -------------------------------
 
