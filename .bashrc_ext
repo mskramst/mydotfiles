@@ -12,6 +12,11 @@ case $- in
       *) return;;
 esac
 
+# ---------------------- local utility functions ---------------------
+
+_have()      { type "$1" &>/dev/null; }
+_source_if() { [[ -r "$1" ]] && source "$1"; }
+
 # ------------------------ environmental variables -------------------------------
 
 export GITUSER="mskramst"
@@ -117,6 +122,18 @@ if test -x /usr/bin/lesspipe; then
   export LESSCLOSE="/usr/bin/lesspipe %s %s";
 fi
 
+
+# ------------------------------- dircolors ------------------------------
+
+if _have dircolors; then
+  if [[ -r "$HOME/.dircolors" ]]; then
+    eval "$(dircolors -b "$HOME/.dircolors")"
+  else
+    eval "$(dircolors -b)"
+  fi
+fi
+
+>>>>>>> 58ecba7 (Updated bashrc)
 # ------------------------------- colors -------------------------------
 
 # set a fancy prompt (non-color, unless we know we "want" color)
@@ -145,6 +162,7 @@ if [ "$color_prompt" = yes ]; then
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
+
 unset color_prompt force_color_prompt
 
 case "$TERM" in
@@ -153,15 +171,8 @@ xterm*|rxvt*)
     ;;
 *)
     ;;
-esac
 
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
+esac
 
 # ------------------------------- completion -------------------------------
 
