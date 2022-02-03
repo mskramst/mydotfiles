@@ -63,6 +63,12 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline'                   "Creates bottom airline bar in vim"
     Plug 'vim-airline/vim-airline-themes'            "Allows for options for airline themes"
 
+"{{ Snippets Management }}
+    Plug 'MarcWeber/vim-addon-mw-utils'
+    Plug 'tomtom/tlib_vim'
+    Plug 'garbas/vim-snipmate'
+    Plug 'honza/vim-snippets'
+
 call plug#end()
 
 if has('termguicolors')
@@ -90,6 +96,7 @@ au FileType markdown setlocal foldlevel=99
 let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.3 } }
 let $FZF_DEFAULT_OPTS='--reverse'
 let g:AutoPairsFlyMode = 0
+let g:snipMate = { 'snippet_version' : 1 }
 
 "{{Personal Quick Actions}}
 nnoremap <leader>so :so %<CR>
@@ -101,6 +108,7 @@ nnoremap <leader>bn :bn<CR>
 nnoremap <leader>test :-1read ~/startanew/snippets/test.snippet<CR>
 nnoremap <leader>tit :.!htitle<CR>
 nnoremap <leader>gf :Files<CR>
+nnoremap <leader>sm :SnipMateOpenSnippetFiles<CR>
 
 "{{Git related commands}}
 nmap <leader>gs :G<CR>
