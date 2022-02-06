@@ -107,7 +107,7 @@ nnoremap <leader>bp :bp<CR>
 nnoremap <leader>bn :bn<CR>
 nnoremap <leader>test :-1read ~/startanew/snippets/test.snippet<CR>
 nnoremap <leader>tit :.!htitle<CR>
-nnoremap <leader>gf :Files<CR>
+nnoremap <leader>gf :GFiles<CR> 
 nnoremap <leader>sm :SnipMateOpenSnippetFiles<CR>
 
 "{{Git related commands}}
