@@ -4,6 +4,9 @@ source ~/.bash_git
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias mkdir='mkdir -p'
+alias cp='cp -i'
+alias mv='mv -i'
 alias sobash="source ~/.bashrc_ext && echo 'loading bashrc_ext'"
 alias aptup='sudo apt-get update'
 alias aptupg="sudo apt-get update && sudo apt-get upgrade"
@@ -36,6 +39,7 @@ alias chmox='chmod +x'
 alias gita='git add .'
 alias gitc='git commit -m'
 alias gitp="git push"
+alias gradlew='./gradlew'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
