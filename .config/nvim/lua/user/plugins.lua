@@ -45,11 +45,26 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use 'morhetz/gruvbox'
-  -- use 'vim-airline/vim-airline'                   "Creates bottom airline bar in vim"
-  -- use 'vim-airline/vim-airline-themes'            "Allows for options for airline themes"
+  use 'neovim/nvim-lspconfig' -- Collection of configurations for the built-in LSP client
+  use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+  }
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  } 
+  use "jose-elias-alvarez/null-ls.nvim"
+  use "jose-elias-alvarez/nvim-lsp-ts-utils"
+  use 'vim-airline/vim-airline'                   -- Creates bottom airline bar in vim"
+  use 'vim-airline/vim-airline-themes'            -- Allows for options for airline themes"
   use 'tpope/vim-fugitive'
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
 end)
+
+
+
+
