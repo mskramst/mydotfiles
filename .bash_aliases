@@ -28,8 +28,8 @@ alias alac='vim ~/.config/alacritty/alacritty.yml'
 
 # git related 
 alias gs="git status"
-alias push="git push origin master && echo 'pushing master to origin'"
-alias pushssh='git push ssh master'
+alias push="git push origin main && echo 'pushing main to origin'"
+alias configpush='git push origin main'
 alias myctags='ctags -R .'
 
 # setup for syncing dot files to and from multiple computers
