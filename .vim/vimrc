@@ -62,6 +62,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'morhetz/gruvbox'
     Plug 'vim-airline/vim-airline'                   "Creates bottom airline bar in vim"
     Plug 'vim-airline/vim-airline-themes'            "Allows for options for airline themes"
+    Plug 'psliwka/vim-smoothie'
 
 "{{ Snippets Management }}
     Plug 'MarcWeber/vim-addon-mw-utils'

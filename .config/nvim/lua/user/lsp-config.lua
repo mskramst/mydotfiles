@@ -52,3 +52,5 @@ null_ls.setup({
     },
     on_attach = on_attach,
 })
+
+require'lspconfig'.kotlin_language_server.setup{}

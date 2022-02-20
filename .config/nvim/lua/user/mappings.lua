@@ -8,6 +8,7 @@ vim.bo.softtabstop = 2
 vim.bo.autoindent = true
 vim.wo.relativenumber = true
 vim.bo.textwidth = 80
+vim.bo.tabstop = 2
 vim.wo.nu = true
 vim.wo.cc = "80"
 
