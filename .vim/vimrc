@@ -41,6 +41,7 @@ call plug#begin('~/.vim/plugged')
 
 "{{The Basics}}
     Plug 'plasticboy/vim-markdown'                   "Allows for folding and collapsing of markdown files"
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }  
     "Plug 'jiangmiao/auto-pairs'                      "Create closing braces, parentheses etc."
     Plug 'sheerun/vim-polyglot'
 "    Plug 'vim-pandoc/vim-pandoc'
@@ -98,6 +99,7 @@ let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.3 } }
 let $FZF_DEFAULT_OPTS='--reverse'
 let g:AutoPairsFlyMode = 0
 let g:snipMate = { 'snippet_version' : 1 }
+let g:mkdp_markdown_css = '~/.vim/github-markdown.css'
 
 "{{Personal Quick Actions}}
 nnoremap <leader>so :so %<CR>
@@ -111,6 +113,8 @@ nnoremap <leader>tit :.!htitle<CR>
 nnoremap <leader>gf :GFiles<CR>
 nnoremap <leader>gg :Files<CR>
 nnoremap <leader>sm :SnipMateOpenSnippetFiles<CR>
+nnoremap <leader>md :MarkdownPreview<CR>
+
 
 "{{Git related commands}}
 nmap <leader>gs :G<CR>
