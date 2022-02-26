@@ -115,7 +115,6 @@ nnoremap <leader>gg :Files<CR>
 nnoremap <leader>sm :SnipMateOpenSnippetFiles<CR>
 nnoremap <leader>md :MarkdownPreview<CR>
 
-
 "{{Git related commands}}
 nmap <leader>gs :G<CR>
 nmap <leader>gc :GCheckout<CR>
@@ -137,6 +136,7 @@ highlight ColorColumn guibg=#606060
 
 " Disable caps lock after leaving insert mode
 au InsertLeave * call TurnOffCaps()
+au BufRead,BufNewFile *.md setlocal textwidth=80
 
 function TurnOffCaps()
     let capsState = matchstr(system('xset -q'), '00: Caps Lock:\s\+\zs\(on\|off\)\ze')

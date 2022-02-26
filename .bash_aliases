@@ -25,6 +25,7 @@ alias i3conf='vim ~/.config/i3/config'
 alias balias='vim ~/.bash_aliases'
 alias bhistory='vim ~/.bash_history'
 alias alac='vim ~/.config/alacritty/alacritty.yml'
+alias hl='highlight -O ansi'
 
 # git related 
 alias gs="git status"
