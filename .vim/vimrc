@@ -48,6 +48,7 @@ call plug#begin('~/.vim/plugged')
 "    Plug 'vim-pandoc/vim-pandoc-syntax' 
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     Plug 'StanAngeloff/php.vim'
+    Plug 'arnaud-lb/vim-php-namespace'
 
 "{{Productivity}}
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  "Interactive file finder"
@@ -158,3 +159,14 @@ ab :email: 📧
 ab :computer: 💻
 ab :keyboard: ⌨️
 
+"{{ Automatically Import PHP Namespaces }}
+function! IPhpExpandClass()
+    call PhpExpandClass()
+    call feedkeys('a', 'n')
+endfunction
+
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+autocmd FileType php noremap <Leader>use :call PhpInsertUse()<CR>

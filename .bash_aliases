@@ -27,11 +27,13 @@ alias bhistory='vim ~/.bash_history'
 alias alac='vim ~/.config/alacritty/alacritty.yml'
 alias hl='highlight -O ansi'
 
-# git related 
+# software related 
 alias gs="git status"
 alias push="git push origin main && echo 'pushing main to origin'"
 alias configpush='git push origin main'
 alias myctags='ctags -R .'
+alias comp='composer'
+alias autoload='composer dump-autoload -o'
 
 # setup for syncing dot files to and from multiple computers
 alias config='/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME' 
