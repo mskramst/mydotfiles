@@ -3,6 +3,7 @@
 
 syntax on
 filetype indent on
+set nocompatible
 set showmatch                                       "convenient for showing the matching braces"
 set hidden                                          "allows for file buffers
 set wildmenu                                        "creates a wild menu for toggling between files"

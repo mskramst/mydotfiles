@@ -20,6 +20,7 @@ _source_if() { [[ -r "$1" ]] && source "$1"; }
 # ------------------------ environmental variables -------------------------------
 
 export GITUSER="mskramst"
+export STARTANEW="$HOME/repos/github.com/$GITUSER/startanew"
 export SNIPPETS="$HOME/repos/github.com/$GITUSER/startanew/snippets"
 export SCRIPTS="$HOME/repos/github.com/$GITUSER/startanew/scripts"
 export GHREPOS="$HOME/repos/github.com/$GITUSER/"

@@ -25,6 +25,7 @@ alias i3conf='vim ~/.config/i3/config'
 alias balias='vim ~/.bash_aliases'
 alias bhistory='vim ~/.bash_history'
 alias alac='vim ~/.config/alacritty/alacritty.yml'
+alias vimnotes='vim $STARTANEW/software/vim.md'
 alias hl='highlight -O ansi'
 
 # software related 
@@ -32,18 +33,31 @@ alias gs="git status"
 alias push="git push origin main && echo 'pushing main to origin'"
 alias configpush='git push origin main'
 alias myctags='ctags -R .'
+
+#java/kotlin
+alias gr='./gradlew'
+alias grt='gradle test'
+alias grr='gradle run'
+alias gtasks='gradle tasks'
+
+#php
 alias comp='composer'
 alias autoload='composer dump-autoload -o'
+
+#python & vm
+alias py-act='. venv/bin/activate'
+alias deact='deactivate'
 
 # setup for syncing dot files to and from multiple computers
 alias config='/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME' 
 
 #useful
 alias chmox='chmod +x'
+
+# git
 alias gita='git add .'
 alias gitc='git commit -m'
-alias gitp="git push"
-alias gradlew='./gradlew'
+alias gitp="git push && git push origin main"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
