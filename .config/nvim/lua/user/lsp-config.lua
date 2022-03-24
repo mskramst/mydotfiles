@@ -54,3 +54,5 @@ null_ls.setup({
 })
 
 require'lspconfig'.kotlin_language_server.setup{}
+require'lspconfig'.pyright.setup{}
+require('go').setup()

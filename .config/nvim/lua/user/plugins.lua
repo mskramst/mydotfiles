@@ -59,6 +59,7 @@ return packer.startup(function(use)
   use 'vim-airline/vim-airline'                   -- Creates bottom airline bar in vim"
   use 'vim-airline/vim-airline-themes'            -- Allows for options for airline themes"
   use 'tpope/vim-fugitive'
+  use 'ray-x/go.nvim'
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
     require("packer").sync()
