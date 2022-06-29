@@ -10,6 +10,7 @@ alias mv='mv -i'
 alias sobash="source ~/.bashrc_ext && echo 'loading bashrc_ext'"
 alias aptup='sudo apt-get update'
 alias aptupg="sudo apt-get update && sudo apt-get upgrade"
+alias tree="tree -I 'node_modules|venv'"
 alias g="grip -b"
 
 # common directories
