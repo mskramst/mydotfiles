@@ -2,13 +2,13 @@
 vim.g.mapleader = " "
 vim.o.showmatch = true
 vim.o.ruler = true
-vim.bo.expandtab = true
 vim.bo.shiftwidth = 2
-vim.bo.softtabstop = 2
+vim.bo.softtabstop = 4
 vim.bo.autoindent = true
 vim.wo.relativenumber = true
 vim.bo.textwidth = 80
-vim.bo.tabstop = 2
+vim.bo.tabstop = 4
+vim.bo.expandtab = true
 vim.wo.nu = true
 vim.wo.cc = "80"
 
@@ -23,7 +23,7 @@ keymap('n','<Leader>gg', ':Telescope find_files<CR>', {})
 keymap('n','<Leader>buf', ':Telescope buffers<CR>', {})
 keymap('n','<Leader>bp', ':bp<CR>', {})
 keymap('n','<Leader>bn', ':bn<CR>', {})
-keymap('i','<Leader>code', 'i```<CR><CR>```', {})
+keymap('i','<Leader>cde', 'i```<CR><CR>```', {})
 keymap('n','<Leader>o', ':on', {})
 keymap('n','<Leader>q', ':q', {})
 

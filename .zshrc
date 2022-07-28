@@ -107,9 +107,34 @@ source $ZSH/oh-my-zsh.sh
 # ------------------------ environmental variables -------------------------------
 
 export GITUSER="mskramst"
-export SNIPPETS="$HOME/repos/github.com/$GITUSER/snippets"
+export STARTANEW="$HOME/repos/github.com/$GITUSER/startanew"
+export SNIPPETS="$HOME/repos/github.com/$GITUSER/startanew/snippets"
+export SCRIPTS="$HOME/repos/github.com/$GITUSER/startanew/scripts"
 export GHREPOS="$HOME/repos/github.com/$GITUSER/"
-export NOTES="$HOME/repos/github.com/$GITUSER/startanew"
+export NOTES="$HOME/repos/github.com/$GITUSER/startanew/writing/notes"
+export PATH="$HOME/repos/github.com/$GITUSER/startanew/scripts:$PATH"
+export DESKTOP="$HOME/Desktop"
+export DOCUMENTS="$HOME/Documents"
+export DOWNLOADS="$HOME/Downloads"
+export TEMPLATES="$HOME/Templates"
+export PUBLIC="$HOME/Public"
+export PRIVATE="$HOME/Private"
+export PICTURES="$HOME/Pictures"
+export MUSIC="$HOME/Music"
+export VIDEOS="$HOME/Videos"
+export CODE="$HOME/Code"
+export HRULEWIDTH=73
+export EDITOR=vi
+export EDITOR_PREFIX=vi
+export VISUAL=vi
+export TERM=xterm-256color
+export LESS_TERMCAP_mb="[35m" # magenta
+export LESS_TERMCAP_md="[33m" # yellow
+export LESS_TERMCAP_me="" # "0m"
+export LESS_TERMCAP_se="" # "0m"
+export LESS_TERMCAP_so="[34m" # blue
+export LESS_TERMCAP_ue="" # "0m"
+export LESS_TERMCAP_us="[4m"  # underline
 
 # ----------------------------- aliases -------------------------------
 
@@ -154,5 +179,6 @@ pathprepend() {
 #export SCRIPTS=~/startanew/scripts
 #mkdir -p "$SCRIPTS" &>/dev/null
 
-export PATH="~/startanew/scripts:$PATH"
-
+export PATH="~/repos/github.com/mskramst/startanew/scripts:$PATH"
+export PATH=$PATH:$(go env GOPATH)/bin
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
