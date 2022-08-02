@@ -7,7 +7,6 @@ set nocompatible
 set showmatch                                       "convenient for showing the matching braces"
 set hidden                                          "allows for file buffers
 set wildmenu                                        "creates a wild menu for toggling between files"
-set path+=**                                        "sets path to current directory"
 set colorcolumn=80                                  "Create a clear 80 char limit for coding"
 set autoindent
 set nu                                              "Display line numbers"
@@ -26,8 +25,9 @@ set expandtab
 set shiftwidth=2
 set ruler
 set wrapscan
-
-set wildignore+=**/node_modules/**                  "ignore node_modules folder"
+set path=$PWD/**                                    " enable fuzzy finding in the vim command line
+set wildmenu                                        " enable fuzzy menu
+set wildignore+=**/.git/**,**/__pycache__/**,**/venv/**,**/node_modules/**,**/dist/**,**/build/**,*.o,*.pyc,*.swp
 
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
@@ -43,7 +43,8 @@ call plug#begin('~/.vim/plugged')
 "{{The Basics}}
     Plug 'plasticboy/vim-markdown'                   "Allows for folding and collapsing of markdown files"
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }  
-    "Plug 'jiangmiao/auto-pairs'                      "Create closing braces, parentheses etc."
+    "Plug 'jiangmiao/auto-pairs'                      "Create closing braces,
+    "parentheses etc. (No currently using)"
     Plug 'sheerun/vim-polyglot'
 "    Plug 'vim-pandoc/vim-pandoc'
 "    Plug 'vim-pandoc/vim-pandoc-syntax' 
@@ -81,7 +82,6 @@ endif
 
 "{{Theming}}
 colorscheme gruvbox 
-
 let g:gruvbox_contrast_dark = 'medium'
 let g:airline_theme = 'gruvbox'
 let g:lightline = { 'colorscheme': 'gruvbox' }
@@ -93,21 +93,26 @@ set term=xterm
 let mapleader = " "
 
 "{{ Plug-in configurations }}
+
+" ------------------------- Markdown specific ------------------------
 autocmd Filetype markdown let b:autopairs_enabled = 0
 let g:vim_markdown_folding_disabled = 1
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
 au FileType markdown setlocal foldlevel=99
+let g:mkdp_markdown_css = '~/.vim/github-markdown.css'
+
+" --------------------------- Fuzzy finder ---------------------------
 let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.3 } }
 let $FZF_DEFAULT_OPTS='--reverse'
-let g:AutoPairsFlyMode = 0
+
 let g:snipMate = { 'snippet_version' : 1 }
-let g:mkdp_markdown_css = '~/.vim/github-markdown.css'
+
 let g:go_fmt_command = "gofmt"
 
 "{{Personal Quick Actions}}
 nnoremap <leader>so :so %<CR>
 nnoremap <leader>vim :e ~/.vim/vimrc<CR>
-nnoremap <leader>not :e ~/startanew/software/vim.md<CR>
+nnoremap <leader>not :e $STARTANEW/software/vim.md<CR>
 nnoremap <leader>term :bo term<CR>
 nnoremap <leader>bp :bp<CR>
 nnoremap <leader>bn :bn<CR>
