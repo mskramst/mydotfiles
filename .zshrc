@@ -182,3 +182,4 @@ pathprepend() {
 export PATH="~/repos/github.com/mskramst/startanew/scripts:$PATH"
 export PATH=$PATH:$(go env GOPATH)/bin
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+ eval "$(/opt/homebrew/bin/brew shellenv)"

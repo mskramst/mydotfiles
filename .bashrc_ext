@@ -1,5 +1,3 @@
-
-
 # ----------------------------- setup -------------------------------
 # cut and move to to .bashrc to load this file
 # if [ -f ~/.bashrc_ext ]; then
