@@ -122,6 +122,7 @@ nnoremap <leader>gf :GFiles<CR>
 nnoremap <leader>gg :Files<CR>
 nnoremap <leader>sm :SnipMateOpenSnippetFiles<CR>
 nnoremap <leader>md :MarkdownPreview<CR>
+nnoremap <leader>link :.!sn mdurl<CR>
 
 "{{Git related commands}}
 nmap <leader>gs :G<CR>
