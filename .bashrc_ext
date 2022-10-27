@@ -181,17 +181,18 @@ alias dlvids='cd //media/stuff/DATA/dlvids'
 alias bext='vim ~/.bashrc_ext'
 alias vimc='vim ~/.vim/vimrc'
 alias i3conf='vim ~/.config/i3/config'
-alias balias='vim ~/.bash_aliases'
 alias bhistory='vim ~/.bash_history'
 alias alac='vim ~/.config/alacritty/alacritty.yml'
 alias vimnotes='vim $STARTANEW/software/vim.md'
 alias hl='highlight -O ansi'
+alias src='source ~/.bashrc_ext'
 
 # software related 
 alias gs="git status"
 alias push="git push origin main && echo 'pushing main to origin'"
 alias configpush='git push origin main'
 alias myctags='ctags -R .'
+alias package='cat package.json'
 
 #java/kotlin
 alias gr='./gradlew'
