@@ -154,7 +154,6 @@ fi
 
 # ------------------------------ aliases -----------------------------
 
-
 # my aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -166,9 +165,6 @@ alias sobash="source ~/.bashrc_ext && echo 'loading bashrc_ext'"
 alias aptup='sudo apt-get update'
 alias aptupg="sudo apt-get update && sudo apt-get upgrade"
 alias tree="tree -I 'node_modules|venv'"
-alias g="grip -b"
-alias '??'=duck
-alias '?'=google
 
 # common directories
 alias start='cd $HOME/repos/github.com/$GITUSER/startanew'
@@ -191,7 +187,7 @@ alias gs="git status"
 alias push="git push origin main && echo 'pushing main to origin'"
 alias configpush='git push origin main'
 alias myctags='ctags -R .'
-alias package='cat package.json'
+alias pack='cat package.json'
 
 #java/kotlin
 alias gr='./gradlew'
