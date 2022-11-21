@@ -44,12 +44,11 @@ call plug#begin('~/.vim/plugged')
 
 "{{The Basics}}
     Plug 'plasticboy/vim-markdown'                   "Allows for folding and collapsing of markdown files"
-    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }  
-    "Plug 'jiangmiao/auto-pairs'                      "Create closing braces,
-    "parentheses etc. (No currently using)"
+    Plug 'JamshedVesuna/vim-markdown-preview'
+    Plug 'jiangmiao/auto-pairs'                      "Create closing braces,
     Plug 'sheerun/vim-polyglot'
-"    Plug 'vim-pandoc/vim-pandoc'
-"    Plug 'vim-pandoc/vim-pandoc-syntax' 
+    Plug 'vim-pandoc/vim-pandoc'
+    Plug 'vim-pandoc/vim-pandoc-syntax' 
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     Plug 'StanAngeloff/php.vim'
     Plug 'arnaud-lb/vim-php-namespace'
@@ -215,7 +214,6 @@ call plug#begin('~/.vim/plugged')
 
 "{{The Basics}}
     Plug 'plasticboy/vim-markdown'                   "Allows for folding and collapsing of markdown files"
-    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }  
     "Plug 'jiangmiao/auto-pairs'                      "Create closing braces,
     "parentheses etc. (No currently using)"
     Plug 'sheerun/vim-polyglot'

@@ -17,12 +17,15 @@ _source_if() { [[ -r "$1" ]] && source "$1"; }
 
 # ------------------------ environmental variables -------------------------------
 
-export STARTANEW="$HOME/repos/github.com/$GITUSER/startanew"
-export SNIPPETS="$HOME/repos/github.com/$GITUSER/startanew/snippets"
-export SCRIPTS="$HOME/repos/github.com/$GITUSER/startanew/scripts"
-export GHREPOS="$HOME/repos/github.com/$GITUSER/"
-export NOTES="$HOME/repos/github.com/$GITUSER/startanew/writing/notes"
-export PATH="$HOME/repos/github.com/$GITUSER/startanew/scripts:$PATH"
+export USER="${USER:-$(whoami)}"
+export GITUSER="$USER"
+export REPOS="$HOME/repos"
+export GHREPOS="$REPOS/github.com/$GITUSER"
+export STARTANEW="$GHREPOS/startanew"
+export SNIPPETS="$STARTANEW/snippets"
+export SCRIPTS="$STARTANEW/scripts"
+export NOTES="$STARTANEW/writing/notes"
+export PATH="$STARTANEW/scripts:$PATH"
 export DESKTOP="$HOME/Desktop"
 export DOCUMENTS="$HOME/Documents"
 export DOWNLOADS="$HOME/Downloads"
@@ -37,7 +40,8 @@ export HRULEWIDTH=73
 export EDITOR=vi
 export EDITOR_PREFIX=vi
 export VISUAL=vi
-export TERM=xterm-256color
+export TERM=xterm-256color #controversial?
+
 export LESS_TERMCAP_mb="[35m" # magenta
 export LESS_TERMCAP_md="[33m" # yellow
 export LESS_TERMCAP_me="" # "0m"
@@ -92,8 +96,8 @@ pathprepend() {
 
 export CDPATH=.:\
 ~/repos/github.com:\
-~/repos/github.com/$GITUSER:\
-~/repos/github.com/$GITUSER/startanew:\
+~/repos/github.com/$USER:\
+~/repos/github.com/$USER/startanew:\
 ~/repos:\
 ~/Code\
 ~
@@ -119,12 +123,16 @@ fi
 
 # ------------------------------- dircolors ------------------------------
 
-if _have dircolors; then
-  if [[ -r "$HOME/.dircolors" ]]; then
-    eval "$(dircolors -b "$HOME/.dircolors")"
-  else
-    eval "$(dircolors -b)"
-  fi
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
 fi
 
 # ------------------------------- colors -------------------------------
@@ -170,6 +178,7 @@ alias tree="tree -I 'node_modules|venv'"
 alias start='cd $HOME/repos/github.com/$GITUSER/startanew'
 alias scripts='cd $SCRIPTS'
 alias snippets='cd $SNIPPETS'
+alias cde='cd $CODE'
 alias dlvids='cd //media/stuff/DATA/dlvids'
 
 # editing config files
@@ -179,6 +188,7 @@ alias i3conf='vim ~/.config/i3/config'
 alias bhistory='vim ~/.bash_history'
 alias alac='vim ~/.config/alacritty/alacritty.yml'
 alias vimnotes='vim $STARTANEW/software/vim.md'
+alias vpack='vim package.json'
 alias hl='highlight -O ansi'
 alias src='source ~/.bashrc_ext'
 
@@ -213,9 +223,5 @@ alias chmox='chmod +x'
 alias gita='git add .'
 alias gitc='git commit -m'
 alias gitp="git push && git push origin main"
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 
