@@ -1,3 +1,8 @@
+"{{ http://www.github.com/mskramst }}
+"{{ A customized vimrc file }}
+
+source ~/.vim/vimabbrs                         "abbreviations loaded from external file
+
 syntax on
 filetype indent on
 set nocompatible
@@ -90,14 +95,14 @@ let mapleader = " "
 
 "{{ Plug-in configurations }}
 
-" ------------------------- Markdown specific ------------------------
+"{{ Markdown specific }}
 autocmd Filetype markdown let b:autopairs_enabled = 0
 let g:vim_markdown_folding_disabled = 1
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
 au FileType markdown setlocal foldlevel=99
 let g:mkdp_markdown_css = '~/.vim/github-markdown.css'
 
-" --------------------------- Fuzzy finder ---------------------------
+"{{ Fuzzy finder }}
 let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.3 } }
 let $FZF_DEFAULT_OPTS='--reverse'
 
@@ -134,14 +139,17 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
 nnoremap <leader>o :on
 nnoremap <leader>q :q
 
+"{{ Markdown spacing at end of line }}
+map ,e $A  <ESC>
 highlight RedundantSpaces ctermbg=yellow guibg=yellow
 match RedundantSpaces /\s\+$/
 highlight ColorColumn guibg=#606060
 
-" Disable caps lock after leaving insert mode
+"{{ Disable caps lock after leaving insert mode }}
 au InsertLeave * call TurnOffCaps()
 au BufRead,BufNewFile *.md setlocal textwidth=80
 
@@ -151,19 +159,6 @@ function TurnOffCaps()
         silent! execute ':!xdotool key Caps_Lock'
     endif
 endfunction
-
-"{{ Abbreviations }}
-abbr _SH #!/bin/bash
-ab :white_check_mark: ✅
-ab :bulb: 💡
-ab :pushpin: 📌
-ab :construction: 🚧
-ab :point_right: 👉
-ab :link: 🔗
-ab :wrench: 🔧
-ab :email: 📧
-ab :computer: 💻
-ab :keyboard: ⌨️
 
 "{{ Automatically Import PHP Namespaces }}
 function! IPhpExpandClass()

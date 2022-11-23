@@ -10,11 +10,6 @@ case $- in
       *) return;;
 esac
 
-# ---------------------- local utility functions ---------------------
-
-_have()      { type "$1" &>/dev/null; }
-_source_if() { [[ -r "$1" ]] && source "$1"; }
-
 # ------------------------ environmental variables -------------------------------
 
 export USER="${USER:-$(whoami)}"
@@ -42,6 +37,8 @@ export EDITOR_PREFIX=vi
 export VISUAL=vi
 export TERM=xterm-256color #controversial?
 
+# -------------------------- color man pages -------------------------
+
 export LESS_TERMCAP_mb="[35m" # magenta
 export LESS_TERMCAP_md="[33m" # yellow
 export LESS_TERMCAP_me="" # "0m"
@@ -50,25 +47,14 @@ export LESS_TERMCAP_so="[34m" # blue
 export LESS_TERMCAP_ue="" # "0m"
 export LESS_TERMCAP_us="[4m"  # underline
 
-# ----------------------------- aliases -------------------------------
-
-man() {
-    LESS_TERMCAP_md=$'\e[01;31m' \
-    LESS_TERMCAP_me=$'\e[0m' \
-    LESS_TERMCAP_se=$'\e[0m' \
-    LESS_TERMCAP_so=$'\e[01;44;33m' \
-    LESS_TERMCAP_ue=$'\e[0m' \
-    LESS_TERMCAP_us=$'\e[01;32m' \
-    command man "$@"
-}
 
 # ----------------------------- history -------------------------------
 
 set -o vi
 HISTCONTROL=ignoreboth
 shopt -s histappend
-HISTSIZE=2000
-HISTFILESIZE=2000
+HISTSIZE=5000
+HISTFILESIZE=10000
 shopt -s checkwinsize
 
 # ------------------------------- path -------------------------------
@@ -175,7 +161,7 @@ alias aptupg="sudo apt-get update && sudo apt-get upgrade"
 alias tree="tree -I 'node_modules|venv'"
 
 # common directories
-alias start='cd $HOME/repos/github.com/$GITUSER/startanew'
+alias start='cd $STARTANEW'
 alias scripts='cd $SCRIPTS'
 alias snippets='cd $SNIPPETS'
 alias cde='cd $CODE'
@@ -185,12 +171,12 @@ alias dlvids='cd //media/stuff/DATA/dlvids'
 alias bext='vim ~/.bashrc_ext'
 alias vimc='vim ~/.vim/vimrc'
 alias i3conf='vim ~/.config/i3/config'
-alias bhistory='vim ~/.bash_history'
+alias bhist='vim ~/.bash_history'
 alias alac='vim ~/.config/alacritty/alacritty.yml'
 alias vimnotes='vim $STARTANEW/software/vim.md'
 alias vpack='vim package.json'
 alias hl='highlight -O ansi'
-alias src='source ~/.bashrc_ext'
+alias src='exec bash -l'     #reloads shell with all values (best)
 
 # software related 
 alias gs="git status"
@@ -224,4 +210,28 @@ alias gita='git add .'
 alias gitc='git commit -m'
 alias gitp="git push && git push origin main"
 
+# ----------------------------- functions ----------------------------
+
+# clones into a specific directory
+
+clone() {
+  local repo="$1" user
+  local repo="${repo#https://github.com/}"
+  local repo="${repo#git@github.com:}"
+  if [[ $repo =~ / ]]; then
+    user="${repo%%/*}"
+  else
+    user="$GITUSER"
+    [[ -z "$user" ]] && user="$USER"
+  fi
+  local name="${repo##*/}"
+  local userd="$REPOS/github.com/$user"
+  local path="$userd/$name"
+  [[ -d "$path" ]] && cd "$path" && return
+  mkdir -p "$userd"
+  cd "$userd"
+  echo gh repo clone "$user/$name" -- --recurse-submodule
+  gh repo clone "$user/$name" -- --recurse-submodule
+  cd "$name"
+} && export -f clone
 
