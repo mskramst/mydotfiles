@@ -90,14 +90,6 @@ export CDPATH=.:\
 
 #mkdir -p "$SCRIPTS" &>/dev/null
 
-# go up x number of dirs
-goup() {
-  num=$1
-  while [ $num -ne 0  ];do
-    cd ..
-    num=$( expr $num - 1   )
-  done
-}
 
 # ------------------------------- pager ------------------------------
 
@@ -112,14 +104,10 @@ fi
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
     alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
+    alias ls='ls --color=auto'
 fi
+
 
 # ------------------------------- colors -------------------------------
 
@@ -129,9 +117,8 @@ case "$TERM" in
 esac
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\n💻 (\[\033[01;34m\]\u) \[\033[01;37m\]\w\[\033[00m\]/ \[\033[01;33m\] $(__git_ps1) \[\033[01;37m\]->> \[\033[00;37m\] '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\n💻 (\[\033[01;34m\]\u) \[\033[01;37m\]\w\[\033[00m\]/ \[\033[01;33m\] $(__git_ps1) \[\033[01;37m\]->> \[\033[00;37m\] ' 
+  else PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 
 # ------------------------------- completion -------------------------------
@@ -149,16 +136,11 @@ fi
 # ------------------------------ aliases -----------------------------
 
 # my aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
 alias mkdir='mkdir -p'
 alias cp='cp -i'
 alias mv='mv -i'
-alias sobash="source ~/.bashrc_ext && echo 'loading bashrc_ext'"
 alias aptup='sudo apt-get update'
 alias aptupg="sudo apt-get update && sudo apt-get upgrade"
-alias tree="tree -I 'node_modules|venv'"
 
 # common directories
 alias start='cd $STARTANEW'
@@ -174,6 +156,7 @@ alias i3conf='vim ~/.config/i3/config'
 alias bhist='vim ~/.bash_history'
 alias alac='vim ~/.config/alacritty/alacritty.yml'
 alias vimnotes='vim $STARTANEW/software/vim.md'
+alias mynotes='vim $STARTANEW/mynotes.md'
 alias vpack='vim package.json'
 alias hl='highlight -O ansi'
 alias src='exec bash -l'     #reloads shell with all values (best)
@@ -211,6 +194,16 @@ alias gitc='git commit -m'
 alias gitp="git push && git push origin main"
 
 # ----------------------------- functions ----------------------------
+
+# go up x number of dirs with # argument
+
+goup() {
+  num=$1
+  while [ $num -ne 0  ];do
+    cd ..
+    num=$( expr $num - 1   )
+  done
+}
 
 # clones into a specific directory
 

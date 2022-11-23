@@ -1,0 +1,13 @@
+"{{ Automatically Import PHP Namespaces }}
+
+function! IPhpExpandClass()
+    call PhpExpandClass()
+    call feedkeys('a', 'n')
+endfunction
+
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+
+autocmd FileType php noremap <Leader>use :call PhpInsertUse()<CR>

@@ -1,38 +1,52 @@
-"{{ http://www.github.com/mskramst }}
-"{{ A customized vimrc file }}
+"  Full Complement
+"  www.github.com/mskramst
+"
+" A customized .vimrc for vim (https://www.vim.org/)
 
-source ~/.vim/vimabbrs                         "abbreviations loaded from external file
+"{{ Settings }}
+
+set nocompatible                       " be iMproved, required
+filetype off                           " required
 
 syntax on
 filetype indent on
-set nocompatible
-set showmatch                                       "convenient for showing the matching braces"
-set hidden                                          "allows for file buffers
-set wildmenu                                        "creates a wild menu for toggling between files"
-set colorcolumn=80                                  "Create a clear 80 char limit for coding"
+set showmatch                          "Convenient for showing the matching braces"
+set hidden                             "Allows for file buffers
+set wildmenu                           "Creates a wild menu for toggling between files"
+set colorcolumn=80                     "Create a clear 80 char limit for coding"
 set autoindent
-set nu                                              "Display line numbers"
-set relativenumber                                  "show line numbers and relative value for easy navigation"
-set smartcase                                       "Helps with searching text set noswapfile
-set history=10000                                   "Creates a history of vim commands you can search through
-set undodir=~/.vim/undodir                          "Stores undohistory in undodirectory  for edited files for future sessions"
-set undofile                                        "Turns on saving of undo/redo history"
-set pumheight=7                                     "Limits number of suggestions in coc
-set viminfo='20,<1000,s1000                         "prevents truncating yanks, deletes
-set noerrorbells                                    "Turn off sound when errors made"
+set nonu                               "Hide/Display line numbers"
+set norelativenumber                   "Hide/Show line numbers and relative value for easy navigation"
+set smartcase                          "Helps with searching text set noswapfile
+set history=10000                      "Creates a history of vim commands you can search through
+set undodir=~/.vim/undodir             "Stores undohistory in undodirectory for edited files for future sessions"
+set undofile                           "Turns on saving of undo/redo history"
+set viminfo='20,<1000,s1000            "Rrevents truncating yanks, deletes
+set noerrorbells                       "Turn off sound when errors made"
 set belloff=all
-set textwidth=80                                    "Set default settings for tabs, width, indent"
-set tabstop=2
+set textwidth=80                       "Set default settings for tabs, width, indent"
+set tabstop=2                          "All tabbing set to 2
 set softtabstop=2
-set expandtab
 set shiftwidth=2
+set expandtab
 set ruler
 set wrapscan
-set path=$PWD/**                                    " enable fuzzy finding in the vim command line
-set wildmenu                                        " enable fuzzy menu
+set path=$PWD/**                       "Enable fuzzy finding in the vim command line
+set wildmenu                           "Enable fuzzy menu
+set noswapfile
+set nowritebackup
+set ttyfast
+
+" Ignore looking in these locations for fuzzy finder
+
 set wildignore+=**/.git/**,**/__pycache__/**,**/venv/**,**/node_modules/**,**/dist/**,**/build/**,*.o,*.pyc,*.swp
 
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+"{{ External Files }}
+
+source ~/.vim/vimabbrs                 "Abbreviations loaded from external file
+"source ~/.vim/vlang                "Language specific functions
+
+"{{ Plugin Management }}
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -41,39 +55,48 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 "{{Plugins installed into Plugged folder}}
+
 call plug#begin('~/.vim/plugged')
 
 "{{The Basics}}
-    Plug 'plasticboy/vim-markdown'                   "Allows for folding and collapsing of markdown files"
-    "Plug 'jiangmiao/auto-pairs'                      "Create closing braces,
-    Plug 'sheerun/vim-polyglot'
-    Plug 'vim-pandoc/vim-pandoc'
-    Plug 'vim-pandoc/vim-pandoc-syntax' 
-    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-    Plug 'StanAngeloff/php.vim'
-    Plug 'arnaud-lb/vim-php-namespace'
+
+Plug 'plasticboy/vim-markdown'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+Plug 'sheerun/vim-polyglot'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'StanAngeloff/php.vim'
+Plug 'arnaud-lb/vim-php-namespace'
 
 "{{Productivity}}
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  "Interactive file finder"
-    Plug 'junegunn/fzf.vim'
-    Plug 'mattn/emmet-vim'                           "Allows for Emmet commands (see https://docs.emmet.io/)"
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'mattn/emmet-vim'
 
 "{{Pope Plugins}}
-    Plug 'tpope/vim-fugitive'                        "Git functionality in VIM"
-    Plug 'tpope/vim-surround'                        "Allows to change surround values (i.e. cs"' would swtich " to ''"
+
+"Git functionality in VIM"
+
+Plug 'tpope/vim-fugitive'
+
+"Allows to change surround values (i.e. cs"')
+
+Plug 'tpope/vim-surround'
 
 "{{Syntax Highlighting and Colors}}
-    Plug 'ayu-theme/ayu-vim'
-    Plug 'morhetz/gruvbox'
-    Plug 'vim-airline/vim-airline'                   "Creates bottom airline bar in vim"
-    Plug 'vim-airline/vim-airline-themes'            "Allows for options for airline themes"
-    Plug 'psliwka/vim-smoothie'
+Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 "{{ Snippets Management }}
-    Plug 'MarcWeber/vim-addon-mw-utils'
-    Plug 'tomtom/tlib_vim'
-    Plug 'garbas/vim-snipmate'
-    Plug 'honza/vim-snippets'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+
+"Plug 'jiangmiao/auto-pairs'
+"Plug 'vim-pandoc/vim-pandoc'
+"Plug 'vim-pandoc/vim-pandoc-syntax'
 
 call plug#end()
 
@@ -82,35 +105,43 @@ if has('termguicolors')
 endif
 
 "{{Theming}}
-colorscheme gruvbox 
+
+colorscheme gruvbox
 let g:gruvbox_contrast_dark = 'medium'
 let g:airline_theme = 'gruvbox'
 let g:lightline = { 'colorscheme': 'gruvbox' }
 
 "{{For dark version}}
+
 set background=dark
 set term=xterm
 
 let mapleader = " "
+:imap ii <Esc>
 
 "{{ Plug-in configurations }}
 
-"{{ Markdown specific }}
+"{{ File type specific config (i.e. markdown, yaml }}
+
 autocmd Filetype markdown let b:autopairs_enabled = 0
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+au FileType markdown setlocal foldlevel=99
+
 let g:vim_markdown_folding_disabled = 1
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
-au FileType markdown setlocal foldlevel=99
 let g:mkdp_markdown_css = '~/.vim/github-markdown.css'
+let g:go_fmt_command = "gofmt"
 
 "{{ Fuzzy finder }}
+"
 let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.3 } }
 let $FZF_DEFAULT_OPTS='--reverse'
 
 let g:snipMate = { 'snippet_version' : 1 }
 
-let g:go_fmt_command = "gofmt"
-
-autocmd BufNewFile readme.md 0r $STARTANEW/snippets/skele/readme.md
+" File specific / skeleton files when a new file with name created. (i.e. ~/.skele)
+au BufNewFile readme.md 0r $STARTANEW/snippets/skele/readme.md
+au BufRead,BufNewFile *.md setlocal textwidth=80
 
 "{{Personal Quick Actions}}
 nnoremap <leader>so :so %<CR>
@@ -144,14 +175,17 @@ nnoremap <leader>o :on
 nnoremap <leader>q :q
 
 "{{ Markdown spacing at end of line }}
-map ,e $A  <ESC>
-highlight RedundantSpaces ctermbg=yellow guibg=yellow
-match RedundantSpaces /\s\+$/
-highlight ColorColumn guibg=#606060
+"Syntax highlight is located in .vim/after/syntax/vim.vim
 
-"{{ Disable caps lock after leaving insert mode }}
+map ,e $A  <ESC>
+
+" disable search highlighting with <C-L> when refreshing screen
+
+nnoremap <C-L> :nohl<CR><C-L>
+
+"Disable caps lock after leaving insert mode }}
+
 au InsertLeave * call TurnOffCaps()
-au BufRead,BufNewFile *.md setlocal textwidth=80
 
 function TurnOffCaps()
     let capsState = matchstr(system('xset -q'), '00: Caps Lock:\s\+\zs\(on\|off\)\ze')
@@ -160,15 +194,3 @@ function TurnOffCaps()
     endif
 endfunction
 
-"{{ Automatically Import PHP Namespaces }}
-function! IPhpExpandClass()
-    call PhpExpandClass()
-    call feedkeys('a', 'n')
-endfunction
-
-function! IPhpInsertUse()
-    call PhpInsertUse()
-    call feedkeys('a',  'n')
-endfunction
-
-autocmd FileType php noremap <Leader>use :call PhpInsertUse()<CR>
