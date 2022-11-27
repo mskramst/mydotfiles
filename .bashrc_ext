@@ -1,4 +1,4 @@
-# ----------------------------- setup -------------------------------
+#  ----------------------------- setup -------------------------------
 # cut and move to to .bashrc to load this file
 # if [ -f ~/.bashrc_ext ]; then
 #    . ~/.bashrc_ext
@@ -39,6 +39,7 @@ export TERM=xterm-256color #controversial?
 
 # -------------------------- color man pages -------------------------
 
+export LESS="-R"
 export LESS_TERMCAP_mb="[35m" # magenta
 export LESS_TERMCAP_md="[33m" # yellow
 export LESS_TERMCAP_me="" # "0m"
@@ -46,7 +47,6 @@ export LESS_TERMCAP_se="" # "0m"
 export LESS_TERMCAP_so="[34m" # blue
 export LESS_TERMCAP_ue="" # "0m"
 export LESS_TERMCAP_us="[4m"  # underline
-
 
 # ----------------------------- history -------------------------------
 
@@ -91,14 +91,6 @@ export CDPATH=.:\
 #mkdir -p "$SCRIPTS" &>/dev/null
 
 
-# ------------------------------- pager ------------------------------
-
-if test -x /usr/bin/lesspipe; then
-  export LESSOPEN="| /usr/bin/lesspipe %s";
-  export LESSCLOSE="/usr/bin/lesspipe %s %s";
-fi
-
-
 # ------------------------------- dircolors ------------------------------
 
 # enable color support of ls and also add handy aliases
@@ -111,15 +103,30 @@ fi
 
 # ------------------------------- colors -------------------------------
 
+winidx=$(tmux display-message -p '#I')
+
+if (( winidx <0)); then
+  winidx=""
+fi
+
 ## set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
+    xterm-color|*-256color) color_prompt=yes;
 esac
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\n💻 (\[\033[01;34m\]\u) \[\033[01;37m\]\w\[\033[00m\]/ \[\033[01;33m\] $(__git_ps1) \[\033[01;37m\]->> \[\033[00;37m\] ' 
+  PS1='${debian_chroot:+($debian_chroot)}\n💻 $winidx (\[\033[01;34m\]\u) \[\033[01;37m\]\w\[\033[00m\]/ \[\033[01;33m\] $(__git_ps1) \[\033[01;37m\]->> \[\033[00;37m\]  '
   else PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
+
+export LESS_TERMCAP_mb=$'\e[1;31m'     # begin bold
+export LESS_TERMCAP_md=$'\e[1;33m'     # begin blink
+export LESS_TERMCAP_so=$'\e[01;44;37m' # begin reverse video
+export LESS_TERMCAP_us=$'\e[01;37m'    # begin underline
+export LESS_TERMCAP_me=$'\e[0m'        # reset bold/blink
+export LESS_TERMCAP_se=$'\e[0m'        # reset reverse video
+export LESS_TERMCAP_ue=$'\e[0m'        # reset underline
+export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
 
 # ------------------------------- completion -------------------------------
 
@@ -168,6 +175,16 @@ alias configpush='git push origin main'
 alias myctags='ctags -R .'
 alias pack='cat package.json'
 
+#tmux
+
+alias t1="tmux select-window -t 1; echo 'switched to 1'"
+alias t2="tmux select-window -t 2; echo 'switched to 2'"
+alias t3="tmux select-window -t 3; echo 'switched to 3'"
+alias tls="tmux list-windows"
+alias tnot="tmux new-window && tmux rename-window -t 2 'notes'"
+alias tdev="tmux new-window -t 3 && tmux rename-window -t 3 'dev';"
+alias tkill="tmux kill-session -t 0"
+
 #java/kotlin
 alias gr='./gradlew'
 alias grt='gradle test'
@@ -187,6 +204,8 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
 
 #useful
 alias chmox='chmod +x'
+alias ggs='google'
+alias dds='duck'
 
 # git
 alias gita='git add .'
@@ -228,3 +247,11 @@ clone() {
   cd "$name"
 } && export -f clone
 
+
+duck(){
+    w3m https://lite.duckduckgo.com/lite/?q="$@"
+}
+
+google(){
+    w3m https://www.google.com/search?q="$@"
+}

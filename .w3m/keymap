@@ -1,0 +1,13 @@
+# Various ways to to proceed page by page
+keymap =    NEXT_PAGE
+keymap +    NEXT_PAGE
+keymap C-d  NEXT_PAGE
+keymap SPC  NEXT_PAGE
+keymap DOWN NEXT_PAGE
+keymap -    PREV_PAGE
+keymap C-u  PREV_PAGE
+keymap UP   PREV_PAGE
+
+# Open current link in ext browser (application)
+keymap o    EXTERN_LINK
+keymap M-M  EXTERN_LINK

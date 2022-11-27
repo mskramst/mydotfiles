@@ -1,0 +1,13 @@
+imgdisplay none
+display_image 0
+use history 0
+save history 0
+ignorecase_search 1
+bg_color terminal
+anchor_color green
+form_color blue
+
+# Open page in the default browser or Opera
+extbrowser xdg-open %s
+extbrowser2 firefox %s
+
