@@ -103,7 +103,7 @@ fi
 
 # ------------------------------- colors -------------------------------
 
-winidx=$(tmux display-message -p '#I')
+[ -n "${TMUX}" ] && winidx=$(tmux display-message -p '#I')
 
 if (( winidx <0)); then
   winidx=""
@@ -183,7 +183,7 @@ alias t3="tmux select-window -t 3; echo 'switched to 3'"
 alias tls="tmux list-windows"
 alias tnot="tmux new-window && tmux rename-window -t 2 'notes'"
 alias tdev="tmux new-window -t 3 && tmux rename-window -t 3 'dev';"
-alias tkill="tmux kill-session -t 0"
+#alias tkill="tmux kill-session -t 0"
 
 #java/kotlin
 alias gr='./gradlew'
