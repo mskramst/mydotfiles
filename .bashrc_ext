@@ -171,7 +171,7 @@ alias src='exec bash -l'     #reloads shell with all values (best)
 # software related 
 alias gs="git status"
 alias push="git push origin main && echo 'pushing main to origin'"
-alias configpush='git push origin main'
+alias configpush='config push origin main'
 alias myctags='ctags -R .'
 alias pack='cat package.json'
 
