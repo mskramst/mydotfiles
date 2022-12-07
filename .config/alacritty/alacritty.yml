@@ -22,37 +22,32 @@ dynamic_padding: false
 decorations: none
 
 colors:
-  # Default colors
+  name: Splurge
+  author: ""
   primary:
-    background: '#1b2b34'
-    foreground: '#d8dee9'
-
-  # Colors the cursor will use if `custom_cursor_colors` is true
+    background: "#000000"
+    foreground: "#ffffff"
   cursor:
-    text: '#1b2b34'
-    cursor: '#ffffff'
-
-  # Normal colors
+    text: "#000000"
+    cursor: "#ffffff"
   normal:
-    black: '#343d46'
-    red: '#EC5f67'
-    green: '#99C794'
-    yellow: '#FAC863'
-    blue: '#6699cc'
-    magenta: '#c594c5'
-    cyan: '#5fb3b3'
-    white: '#d8dee9'
-
-  # Bright colors
+    black: "#4a4b4a"
+    red: "#d7699a"
+    green: "#80d468"
+    yellow: "#d7a169"
+    blue: "#6985d7"
+    magenta: "#c86ad4"
+    cyan: "#6fccd1"
+    white: "#dbdcdc"
   bright:
-    black: '#343d46'
-    red: '#EC5f67'
-    green: '#99C794'
-    yellow: '#FAC863'
-    blue: '#6699cc'
-    magenta: '#c594c5'
-    cyan: '#5fb3b3'
-    white: '#d8dee9'
+    black: "#696969"
+    red: "#f5a2b5"
+    green: "#a3f2a0"
+    yellow: "#f5cda2"
+    blue: "#a2c1f5"
+    magenta: "#d2a2f5"
+    cyan: "#a0e9f2"
+    white: "#fdfdfd"
 
 font:
   size: 14.0
@@ -119,4 +114,4 @@ key_bindings:
     mods: Alt
     chars: "\e[1;5C"
 
-theme: Oceanic-Next
+theme: Splurge
