@@ -138,6 +138,7 @@ let $FZF_DEFAULT_OPTS='--reverse'
 
 au BufNewFile readme.md 0r $STARTANEW/snippets/skele/readme.md
 au BufRead,BufNewFile *.md setlocal textwidth=80
+autocmd BufNewFile,BufRead * if expand('%:t') !~ '\.' | set syntax=sh | endif
 
 "au BufWritePost *.md silent !cmd %  "apply a transformation on file save
 

@@ -2,6 +2,7 @@
 abbr _SH #!/bin/bash
 ab :white_check_mark: ✅
 ab :bulb: 💡
+ab :smile: ☺
 ab :pushpin: 📌
 ab :construction: 🚧
 ab :point_right: 👉
@@ -10,4 +11,5 @@ ab :wrench: 🔧
 ab :email: 📧
 ab :computer: 💻
 ab :keyboard: ⌨️
+ab :whale: 🐋
 ab sout System.out.println(
