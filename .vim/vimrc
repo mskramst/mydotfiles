@@ -103,7 +103,7 @@ endif
 "{{Theming}}
 
 colorscheme gruvbox
-let g:gruvbox_contrast_dark = 'medium'
+let g:gruvbox_contrast_dark = 'dark'
 let g:airline_theme = 'gruvbox'
 let g:lightline = { 'colorscheme': 'gruvbox' }
 
