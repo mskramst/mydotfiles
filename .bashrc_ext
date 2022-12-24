@@ -149,6 +149,7 @@ alias start='cd $STARTANEW'
 alias scripts='cd $SCRIPTS'
 alias snippets='cd $SNIPPETS'
 alias cde='cd $CODE'
+alias gith='cd $GHREPOS'
 alias dlvids='cd //media/stuff/DATA/dlvids'
 
 # editing config files
