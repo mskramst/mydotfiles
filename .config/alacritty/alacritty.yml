@@ -21,6 +21,11 @@ dynamic_padding: false
 
 decorations: none
 
+font:
+  size: 12.0
+  regular:
+    family: Hack
+
 colors:
   name: Splurge
   author: ""
@@ -49,10 +54,6 @@ colors:
     cyan: "#a0e9f2"
     white: "#fdfdfd"
 
-font:
-  size: 14.0
-  normal:
-    family: Inconsolata
 
 selection:
   text: '0x292d3e'
