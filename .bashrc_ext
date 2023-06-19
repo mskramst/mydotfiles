@@ -31,6 +31,9 @@ export EDITOR=vi
 export EDITOR_PREFIX=vi
 export VISUAL=vi
 export TERM=xterm-256color #controversial?
+export GOPRIVATE="github.com/$GITUSER"
+export GOPATH="$HOME/.local/bin"
+export GOBIN="$HOME/.local/bin"
 
 # -------------------------- color man pages -------------------------
 
@@ -151,6 +154,7 @@ alias snippets='cd $SNIPPETS'
 alias cde='cd $CODE'
 alias gith='cd $GHREPOS'
 alias dlvids='cd //media/stuff/DATA/dlvids'
+alias mnt='cd /mnt/c/Users/m'
 
 # editing config files
 alias bext='vim ~/.bashrc_ext'
@@ -163,6 +167,7 @@ alias mynotes='vim $STARTANEW/mynotes.md'
 alias vpack='vim package.json'
 alias hl='highlight -O ansi'
 alias src='exec bash -l'     #reloads shell with all values (best)
+alias download='youtube-dl -f best'
 
 # software related 
 alias gs="git status"
@@ -173,8 +178,11 @@ alias configpush='config push origin main'
 alias myctags='ctags -R .'
 alias pack='cat package.json'
 
-#tmux
+#docker
 
+alias dstart="docker start -ia" #reconnect to docker container - must add name of container
+
+#tmux
 alias t1="tmux select-window -t 1; echo 'switched to 1'"
 alias t2="tmux select-window -t 2; echo 'switched to 2'"
 alias t3="tmux select-window -t 3; echo 'switched to 3'"

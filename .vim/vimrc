@@ -5,9 +5,9 @@
 
 "----------------------- General settings ---------------------------------
 
-set nocompatible                       " be iMproved, required
+set nocompatible                  " be iMproved, required
 syntax on
-filetype off                           " required
+filetype off                      " required
 filetype indent on
 
 set showmatch                     "Convenient for showing the matching braces"
@@ -15,7 +15,7 @@ set hidden                        "Allows for file buffers
 set wildmenu                      "Creates a wild menu for toggling between files
 set colorcolumn=80                "Create a clear 80 char limit for coding"
 set autoindent
-set nu                          "Hide/Display line numbers"
+set nu                            "Hide/Display line numbers"
 set norelativenumber              "Hide/Show line numbers and relative value
                                   "  for easy navigation"
 set smartcase                     "Helps with searching text set noswapfile
