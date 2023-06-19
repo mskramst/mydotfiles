@@ -6,9 +6,9 @@
 "----------------------- General settings ---------------------------------
 
 set nocompatible                  "be iMproved, required
-syntax on
-filetype off                      "required
-filetype indent on
+syntax on 
+"filetype on                      "required
+"filetype indent on
 
 set showmatch                     "Convenient for showing the matching braces"
 set hidden                        "Allows for file buffers
@@ -115,6 +115,11 @@ set term=xterm
 let mapleader = " "
 :imap ii <Esc>
 
+"{{ Fuzzy finder }}
+
+let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.3 } }
+let $FZF_DEFAULT_OPTS='--reverse'
+
 "{{ File type specific config (i.e. markdown, yaml }}
 nnoremap <leader>md :MarkdownPreview<CR>
 autocmd Filetype markdown let b:autopairs_enabled = 0
@@ -128,19 +133,13 @@ let g:mkdp_markdown_css = '~/.vim/github-markdown.css'
 let g:go_fmt_command = "gofmt"
 "let g:pandoc#modules#enabled = []
 
-"{{ Fuzzy finder }}
-
-let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.3 } }
-let $FZF_DEFAULT_OPTS='--reverse'
-
 " File specific / skeleton files when a new file with name created. 
 " (i.e. ~/.skele)
 
 au BufNewFile readme.md 0r $STARTANEW/snippets/skele/readme.md
 au BufRead,BufNewFile *.md setlocal textwidth=80
-autocmd BufNewFile,BufRead * if expand('%:t') !~ '\.' | set syntax=sh | endif
-
-"au BufWritePost *.md silent !cmd %  "apply a transformation on file save
+" (broken) autocmd BufNewFile,BufRead * if expand('%:t') !~ '\.' | set syntax=sh | endif
+"
 
 "{{Personal Quick Actions}}
 nnoremap <leader>so :so %<CR>
@@ -153,8 +152,10 @@ nnoremap <leader>gf :GFiles<CR>
 nnoremap <leader>gg :Files<CR>
 nnoremap <leader>link :.!sn mdurl<CR>
 nnoremap <leader>sn :-1read $STARTANEW/snippets/
+nnoremap <leader>o :on
+nnoremap <leader>trm :bo term<CR>
 
-"{{Git related commands}}
+"{{Git melated commands}}
 nmap <leader>gs :G<CR>
 nmap <leader>gc :GCheckout<CR>
 nmap <leader>gu :diffget //2<CR>
@@ -167,14 +168,11 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-nnoremap <leader>o :on      "remove all other open files but current file
-
 "can view syntax highlighting for particular element by pressing F2
 "function def below
 nmap <F2> :call <SID>SynStack()<CR>
 
 "{{ Vim Terminal colors }}
-nnoremap <leader>term :bo term<CR>
 
 let g:terminal_ansi_colors = [
   \'#282828', '#CC241D', '#98971A', '#D79921',
