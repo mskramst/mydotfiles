@@ -5,9 +5,9 @@
 
 "----------------------- General settings ---------------------------------
 
-set nocompatible                       " be iMproved, required
+set nocompatible                  "be iMproved, required
 syntax on
-filetype off                           " required
+filetype off                      "required
 filetype indent on
 
 set showmatch                     "Convenient for showing the matching braces"
@@ -15,7 +15,7 @@ set hidden                        "Allows for file buffers
 set wildmenu                      "Creates a wild menu for toggling between files
 set colorcolumn=80                "Create a clear 80 char limit for coding"
 set autoindent
-set nu                          "Hide/Display line numbers"
+set nu                            "Hide/Display line numbers"
 set norelativenumber              "Hide/Show line numbers and relative value
                                   "  for easy navigation"
 set smartcase                     "Helps with searching text set noswapfile
@@ -38,15 +38,15 @@ set noswapfile
 set nowritebackup
 set ttyfast
 
-" Ignore looking in these locations for fuzzy finder
+"Ignore looking in these locations for fuzzy finder
 
 set wildignore+=**/.git/**,**/__pycache__/**,**/venv/**,**/
       \node_modules/**,**/dist/**,**/build/**,*.o,*.pyc,*.swp
 
 "{{ External Files }}
 
-source ~/.vim/vimabbrs.vim             "Abbreviations loaded from external file
-"source ~/.vim/vlang.vim               "Language specific functions
+source ~/.vim/vimabbrs.vim       "Abbreviations loaded from external file
+"source ~/.vim/vlang.vim         "Language specific functions
 
 "------------------------- Plug-in configurations -------------------------- 
 
@@ -171,7 +171,7 @@ nnoremap <leader>o :on      "remove all other open files but current file
 
 "can view syntax highlighting for particular element by pressing F2
 "function def below
-nmap <F2> :call <SID>SynStack()<CR>  
+nmap <F2> :call <SID>SynStack()<CR>
 
 "{{ Vim Terminal colors }}
 nnoremap <leader>term :bo term<CR>
@@ -198,7 +198,7 @@ nnoremap <C-L> :nohl<CR><C-L>
 au InsertLeave * call TurnOffCaps()
 
 function TurnOffCaps()
-    let capsState = matchstr(system('xset -q'), 
+    let capsState = matchstr(system('xset -q'),
       \'00: Caps Lock:\s\+\zs\(on\|off\)\ze')
     if capsState == 'on'
         silent! execute ':!xdotool key Caps_Lock'
