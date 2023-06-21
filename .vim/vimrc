@@ -6,9 +6,9 @@
 "----------------------- General settings ---------------------------------
 
 syntax on
-set nocompatible                  "be iMproved, required
 filetype on                       "required
 filetype indent on
+set nocompatible                  "be iMproved, required
 set showmatch                     "Convenient for showing the matching braces"
 set hidden                        "Allows for file buffers
 set wildmenu                      "Creates a wild menu for toggling between files
