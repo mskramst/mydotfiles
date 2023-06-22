@@ -36,7 +36,7 @@ set path=$PWD/**                  "Enable fuzzy finding in the vim command line
 set noswapfile
 set nowritebackup
 set ttyfast
-
+set re=0                          "Fixes slow TS highlighting
 "Ignore looking in these locations for fuzzy finder
 
 set wildignore+=**/.git/**,**/__pycache__/**,**/venv/**,**/
