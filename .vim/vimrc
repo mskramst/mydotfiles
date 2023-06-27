@@ -37,6 +37,7 @@ set noswapfile
 set nowritebackup
 set ttyfast
 set mouse=a                       "Allows for mouse scrolling
+set re=0                          "Fixes slow TS highlighting
 
 "Ignore looking in these locations for fuzzy finder
 
