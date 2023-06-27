@@ -1,4 +1,4 @@
-"  Full Complement
+""  Full Complement
 "  www.github.com/mskramst
 "
 " A customized .vimrc for vim (https://www.vim.org/)
@@ -36,6 +36,7 @@ set path=$PWD/**                  "Enable fuzzy finding in the vim command line
 set noswapfile
 set nowritebackup
 set ttyfast
+set mouse=a                       "Allows for mouse scrolling
 
 "Ignore looking in these locations for fuzzy finder
 
@@ -63,7 +64,9 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
-Plug 'sheerun/vim-polyglot'
+"Plug 'sheerun/vim-polyglot'
+Plug 'dense-analysis/ale'
+Plug 'HerringtonDarkholme/yats.vim' 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'StanAngeloff/php.vim'
 Plug 'arnaud-lb/vim-php-namespace'
@@ -131,6 +134,9 @@ let g:mkdp_markdown_css = '~/.vim/github-markdown.css'
 
 let g:go_fmt_command = "gofmt"
 "let g:pandoc#modules#enabled = []
+
+"Remove node_modules from fzf (not in git repo like below)
+let $FZF_DEFAULT_COMMAND='find . \( -name node_modules -o -name .git \) -prune -o -print'
 
 " File specific / skeleton files when a new file with name created. 
 " (i.e. ~/.skele)

@@ -23,6 +23,15 @@ vim.cmd [[
   augroup end
 ]]
 
+-- Avoid using node modeules in telescope
+require('telescope').setup{ 
+  defaults = { 
+    file_ignore_patterns = { 
+      "node_modules" 
+    }
+  }
+}
+
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
@@ -41,11 +50,11 @@ packer.init {
 -- Install your plugins here
 return packer.startup(function(use)
   -- My plugins here
-  use "wbthomason/packer.nvim" -- Have packer manage itself
-  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+  use "wbthomason/packer.nvim" 			-- Have packer manage itself
+  use "nvim-lua/popup.nvim" 			-- An implementation of the Popup API from vim in Neovim
+  use "nvim-lua/plenary.nvim" 			-- Useful lua functions used ny lots of plugins
   use 'morhetz/gruvbox'
-  use 'neovim/nvim-lspconfig' -- Collection of configurations for the built-in LSP client
+  use 'neovim/nvim-lspconfig' 			-- Collection of configurations for the built-in LSP client
   use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
@@ -56,8 +65,8 @@ return packer.startup(function(use)
   } 
   use "jose-elias-alvarez/null-ls.nvim"
   use "jose-elias-alvarez/nvim-lsp-ts-utils"
-  use 'vim-airline/vim-airline'                   -- Creates bottom airline bar in vim"
-  use 'vim-airline/vim-airline-themes'            -- Allows for options for airline themes"
+  use 'vim-airline/vim-airline'                 -- Creates bottom airline bar in vim"
+  use 'vim-airline/vim-airline-themes'          -- Allows for options for airline themes"
   use 'tpope/vim-fugitive'
   use 'ray-x/go.nvim'
   -- Put this at the end after all plugins
@@ -67,5 +76,5 @@ return packer.startup(function(use)
 end)
 
 
-
+ 
 

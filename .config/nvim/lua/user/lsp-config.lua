@@ -1,10 +1,12 @@
 local lspconfig = require("lspconfig")
 local null_ls = require("null-ls")
+
 local buf_map = function(bufnr, mode, lhs, rhs, opts)
     vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts or {
         silent = true,
     })
 end
+
 local on_attach = function(client, bufnr)
     vim.cmd("command! LspDef lua vim.lsp.buf.definition()")
     vim.cmd("command! LspFormatting lua vim.lsp.buf.formatting()")
@@ -27,9 +29,6 @@ local on_attach = function(client, bufnr)
     buf_map(bufnr, "n", "ga", ":LspCodeAction<CR>")
     buf_map(bufnr, "n", "<Leader>a", ":LspDiagLine<CR>")
     buf_map(bufnr, "i", "<C-x><C-x>", "<cmd> LspSignatureHelp<CR>")
-    if client.resolved_capabilities.document_formatting then
-        vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
-    end
 end
 lspconfig.tsserver.setup({
     on_attach = function(client, bufnr)
@@ -51,6 +50,14 @@ null_ls.setup({
         null_ls.builtins.formatting.prettier,
     },
     on_attach = on_attach,
+})
+
+require('lspconfig').tsserver.setup({
+    init_options = {
+        preferences = {
+            disableSuggestions = true,
+        },
+    },
 })
 
 require'lspconfig'.kotlin_language_server.setup{}

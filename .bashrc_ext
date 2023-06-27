@@ -146,6 +146,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias aptup='sudo apt-get update'
 alias aptupg="sudo apt-get update && sudo apt-get upgrade"
+alias used="du -sh"
 
 # common directories
 alias start='cd $STARTANEW'
@@ -163,6 +164,7 @@ alias i3conf='vim ~/.config/i3/config'
 alias bhist='vim ~/.bash_history'
 alias alac='vim ~/.config/alacritty/alacritty.yml'
 alias vimnotes='vim $STARTANEW/software/vim.md'
+alias nvimc='nvim ~/.config/nvim/init.lua'
 alias mynotes='vim $STARTANEW/mynotes.md'
 alias vpack='vim package.json'
 alias hl='highlight -O ansi'
