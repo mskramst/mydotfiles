@@ -1,4 +1,4 @@
-""  Full Complement
+"  Full Complement
 "  www.github.com/mskramst
 "
 " A customized .vimrc for vim (https://www.vim.org/)
@@ -29,7 +29,8 @@ set textwidth=80                  "Set default settings for tabs, width, indent"
 set tabstop=2                     "All tabbing set to 2
 set softtabstop=2
 set shiftwidth=2
-set expandtab
+"set showtabline=2
+"set expandtab
 set ruler
 set wrapscan
 set path=$PWD/**                  "Enable fuzzy finding in the vim command line
@@ -66,7 +67,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 "Plug 'sheerun/vim-polyglot'
-Plug 'dense-analysis/ale'
 Plug 'HerringtonDarkholme/yats.vim' 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'StanAngeloff/php.vim'
@@ -109,6 +109,7 @@ colorscheme gruvbox
 let g:gruvbox_contrast_dark = 'dark'
 let g:airline_theme = 'gruvbox'
 let g:lightline = { 'colorscheme': 'gruvbox' }
+"let g:airline#extensions#tabline#enabled = 1
 
 "{{For dark version}}
 
@@ -121,6 +122,7 @@ let mapleader = " "
 "{{ Fuzzy finder }}
 
 let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.3 } }
+let g:fzf_action = { 'enter': 'tab split' }
 let $FZF_DEFAULT_OPTS='--reverse'
 
 "{{ File type specific config (i.e. markdown, yaml }}
@@ -160,6 +162,9 @@ nnoremap <leader>link :.!sn mdurl<CR>
 nnoremap <leader>sn :-1read $STARTANEW/snippets/
 nnoremap <leader>o :on
 nnoremap <leader>trm :bo term<CR>
+nnoremap <Leader>b :ls<CR>:b<Space>
+nnoremap <Leader>buf :.!yyy
+nnoremap <Leader>gbuf :r $STARTANEW/saved/buf
 
 "{{Git melated commands}}
 nmap <leader>gs :G<CR>
@@ -193,6 +198,7 @@ highlight Terminal guibg='#282828' guifg='#ebdbb2'
 
 map ,e $A  <ESC>
 
+" Highlight the active tab.
 "Disable search highlighting with <C-L> when refreshing screen
 
 nnoremap <C-L> :nohl<CR><C-L>
