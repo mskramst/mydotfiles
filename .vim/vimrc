@@ -50,7 +50,7 @@ set wildignore+=**/.git/**,**/__pycache__/**,**/venv/**,**/
 source ~/.vim/vimabbrs.vim       "Abbreviations loaded from external file
 "source ~/.vim/vlang.vim         "Language specific functions
 
-"------------------------- Plug-in configurations -------------------------- 
+"------------------------- Plug-in configurations --------------------------
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -67,7 +67,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 "Plug 'sheerun/vim-polyglot'
-Plug 'HerringtonDarkholme/yats.vim' 
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'StanAngeloff/php.vim'
 Plug 'arnaud-lb/vim-php-namespace'
@@ -165,6 +165,8 @@ nnoremap <leader>trm :bo term<CR>
 nnoremap <Leader>b :ls<CR>:b<Space>
 nnoremap <Leader>buf :.!yyy
 nnoremap <Leader>gbuf :r $STARTANEW/saved/buf
+
+nnoremap q: <nop>
 
 "{{Git melated commands}}
 nmap <leader>gs :G<CR>

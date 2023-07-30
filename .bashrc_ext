@@ -147,6 +147,10 @@ alias mv='mv -i'
 alias aptup='sudo apt-get update'
 alias aptupg="sudo apt-get update && sudo apt-get upgrade"
 alias used="du -sh"
+alias ?="goog"   # uses lynx
+alias ??='websearch' # uses w3m
+alias duck='duck'
+alias gpt='mods'
 
 # common directories
 alias start='cd $STARTANEW'
@@ -212,9 +216,6 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
 
 #useful
 alias chmox='chmod +x'
-alias ggs='google'
-alias dds='duck'
-
 # git
 alias gita='git add .'
 alias gitc='git commit -m'
