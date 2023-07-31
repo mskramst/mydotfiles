@@ -158,14 +158,13 @@ nnoremap <leader>bn :bn<CR>
 nnoremap <leader>tit :.!htitle<CR>
 nnoremap <leader>gf :GFiles<CR>
 nnoremap <leader>gg :Files<CR>
-nnoremap <leader>link :.!sn mdurl<CR>
 nnoremap <leader>sn :-1read $STARTANEW/snippets/
+nnoremap <leader>md :.!mdurl
 nnoremap <leader>o :on
 nnoremap <leader>trm :bo term<CR>
 nnoremap <Leader>b :ls<CR>:b<Space>
-nnoremap <Leader>buf :.!yyy
-nnoremap <Leader>gbuf :r $STARTANEW/saved/buf
-
+nnoremap <Leader>buf :.!yyy<CR>
+nnoremap <Leader>gbuf :r $STARTANEW/saved/buf<CR>
 nnoremap q: <nop>
 
 "{{Git melated commands}}
