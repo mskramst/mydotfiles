@@ -144,6 +144,7 @@ fi
 # ------------------------------ aliases -----------------------------
 
 # my aliases
+alias ls='ls -h --color=auto'
 alias mkdir='mkdir -p'
 alias cp='cp -i'
 alias mv='mv -i'
@@ -176,7 +177,7 @@ alias mynotes='vim $STARTANEW/mynotes.md'
 alias vpack='vim package.json'
 alias hl='highlight -O ansi'
 alias src='exec bash -l'     #reloads shell with all values (best)
-alias download='youtube-dl -f best'
+alias download='yt-dlp -f best'
 
 # software related 
 alias gs="git status"
@@ -223,6 +224,7 @@ alias chmox='chmod +x'
 alias gita='git add .'
 alias gitc='git commit -m'
 alias gitp="git push && git push origin main"
+alias ytget="yt-dlp -x --audio-format mp3"
 
 # ----------------------------- functions ----------------------------
 

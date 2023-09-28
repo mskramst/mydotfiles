@@ -1,5 +1,4 @@
-"  Full Complement
-"  www.github.com/mskramst
+
 "
 " A customized .vimrc for vim (https://www.vim.org/)
 
@@ -66,27 +65,15 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
-"Plug 'sheerun/vim-polyglot'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'StanAngeloff/php.vim'
-Plug 'arnaud-lb/vim-php-namespace'
+Plug 'dense-analysis/ale'
 
 "{{Productivity}}
-
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
 
-"{{Pope Plugins}}
-
 "Git functionality in VIM"
-
 Plug 'tpope/vim-fugitive'
-
-"Allows to change surround values (i.e. cs"')
-
-Plug 'tpope/vim-surround'
 
 "{{Syntax Highlighting and Colors}}
 Plug 'morhetz/gruvbox'
@@ -97,7 +84,21 @@ Plug 'vim-airline/vim-airline-themes'
 "Plug 'vim-pandoc/vim-pandoc'
 "Plug 'vim-pandoc/vim-pandoc-syntax'
 
+"Allows to change surround values (i.e. cs"')
+Plug 'tpope/vim-surround'
+
+"{{Language specific plugins
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+"Plug 'StanAngeloff/php.vim'
+"Plug 'arnaud-lb/vim-php-namespace'
+
+Plug 'sheerun/vim-polyglot'
+
+"Typescript
+Plug 'HerringtonDarkholme/yats.vim'
+
 call plug#end()
+
 
 if has('termguicolors')
   set termguicolors
@@ -129,6 +130,8 @@ let $FZF_DEFAULT_OPTS='--reverse'
 nnoremap <leader>md :MarkdownPreview<CR>
 autocmd Filetype markdown let b:autopairs_enabled = 0
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType json syntax match Comment +\/\/.\+$+
+autocmd FileType json syntax match Comment "//.*"
 au FileType markdown setlocal foldlevel=99
 
 let g:vim_markdown_folding_disabled = 1
@@ -137,6 +140,11 @@ let g:mkdp_markdown_css = '~/.vim/github-markdown.css'
 
 let g:go_fmt_command = "gofmt"
 "let g:pandoc#modules#enabled = []
+"
+let g:ale_sign_error = '@'
+let g:ale_sign_warning = '*'
+"let g:ale_set_signs = 0
+"let b:ale_linters = ['eslint']
 
 "Remove node_modules from fzf (not in git repo like below)
 let $FZF_DEFAULT_COMMAND='find . \( -name node_modules -o -name .git \) -prune -o -print'
