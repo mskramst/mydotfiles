@@ -115,7 +115,8 @@ case "$TERM" in
 esac
 
 if [ "$color_prompt" = yes ]; then
-	PS1='${debian_chroot:+($debian_chroot)}\n💻 $winidx (\[\033[01;37m\]\u) \[\033[01;37m\]\w\[\033[00m\]/ \[\033[01;33m\] $(__git_ps1) \[\033[01;37m\]->> \[\033[00;37m\]  '
+	PS1='${debian_chroot:+($debian_chroot)}\n💻 $winidx (\[\033[01;37m\]\u)
+  \[\033[01;37m\]\W\[\033[00m\]/ \[\033[01;33m\] $(__git_ps1) \[\033[01;37m\]->> \[\033[00;37m\]  '
   else 
 	PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -166,6 +167,7 @@ alias cde='cd $CODE'
 alias gith='cd $GHREPOS'
 alias dlvids='cd //media/stuff/DATA/dlvids'
 alias mnt='cd /mnt/c/Users/m'
+alias reactapp='npx create-react-app my-app --template typescript'
 
 # editing config files
 alias bext='vim ~/.bashrc_ext'
@@ -201,6 +203,9 @@ alias t3="tmux select-window -t 3; echo 'switched to 3'"
 alias tls="tmux list-windows"
 alias tnot="tmux new-window && tmux rename-window -t 2 'notes'"
 alias tdev="tmux new-window -t 3 && tmux rename-window -t 3 'dev';"
+alias dev="tmux new -s dev -d"
+alias play="tmux new -s play -d"
+alias attach="tmux a -t"
 #alias tkill="tmux kill-session -t 0"
 
 #java/kotlin
@@ -227,6 +232,8 @@ alias gita='git add .'
 alias gitc='git commit -m'
 alias gitp="git push && git push origin main"
 alias ytget="yt-dlp -x --audio-format mp3"
+alias yt="ytfzf -L"
+alias ytlist="mpv -fs --playlist=newplaylist"
 
 # ----------------------------- functions ----------------------------
 
