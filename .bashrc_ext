@@ -172,6 +172,7 @@ alias reactapp='npx create-react-app my-app --template typescript'
 # editing config files
 alias bext='vim ~/.bashrc_ext'
 alias vimc='vim ~/.vim/vimrc'
+alias vimabbr='vim ~/.vim/vimabbrs.vim'
 alias i3conf='vim ~/.config/i3/config'
 alias bhist='vim ~/.bash_history'
 alias alac='vim ~/.config/alacritty/alacritty.yml'
