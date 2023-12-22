@@ -29,4 +29,5 @@ ab :media: @media only screen and (max-width: scss-var){<CR><CR>}<CR>
 ab :svg: <svg class=""><CR><use xlink:href="{2}#{3}"><CR></use></svg>
 ab :psvm: public static void main (String [] args) {
 ab :fori: for (int i=0; i < value; i++) {
-ab :sout: System.out.println();
+ab :sout: System.out.println(
+ab :csl: console.log(

@@ -1,4 +1,4 @@
-"
+
 " A customized .vimrc for vim (https://www.vim.org/)
 
 "----------------------- General settings ---------------------------------
@@ -13,6 +13,7 @@ set wildmenu                      "Creates a wild menu for toggling between file
 set colorcolumn=80                "Create a clear 80 char limit for coding"
 set autoindent
 set nonu                            "Hide/Display line numbers"
+set clipboard=unnamed
 "set norelativenumber              "Hide/Show line numbers and relative value
                                   "  for easy navigation"
 set smartcase                     "Helps with searching text set noswapfile
@@ -168,6 +169,7 @@ nnoremap <leader>tit :.!htitle<CR>
 nnoremap <leader>gf :GFiles<CR>
 nnoremap <leader>gg :Files<CR>
 nnoremap <leader>sn :-1read $STARTANEW/snippets/
+nnoremap <leader>gp :.!gp<CR>
 nnoremap <leader>md :.!mdurl
 nnoremap <leader>o :on
 nnoremap <leader>trm :bo term<CR>
