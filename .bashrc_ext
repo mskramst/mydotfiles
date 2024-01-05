@@ -179,7 +179,6 @@ alias alac='vim ~/.config/alacritty/alacritty.yml'
 alias vimnotes='vim $STARTANEW/software/vim.md'
 alias nvimc='nvim ~/.config/nvim/init.lua'
 alias mynotes='vim $STARTANEW/mynotes.md'
-alias vpack='vim package.json'
 alias hl='highlight -O ansi'
 alias src='exec bash -l'     #reloads shell with all values (best)
 alias download='yt-dlp -f best'
@@ -188,11 +187,14 @@ alias download='yt-dlp -f best'
 alias status="git status"
 alias add="git add -A ."
 alias commit="git commit -m"
+alias gac="git add -A . & git commit -m "
 alias push="git push origin main && echo 'pushing main to origin'"
 alias configpush='config push origin main'
 alias myctags='ctags -R .'
 alias pack='cat package.json'
 alias publish='npm publish --access=public'
+alias vpack='vim package.json'
+alias readme="mdv README.md"
 
 #docker
 
