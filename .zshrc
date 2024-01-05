@@ -183,3 +183,7 @@ export PATH="~/repos/github.com/mskramst/startanew/scripts:$PATH"
 export PATH=$PATH:$(go env GOPATH)/bin
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
  eval "$(/opt/homebrew/bin/brew shellenv)"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

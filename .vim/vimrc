@@ -170,9 +170,9 @@ nnoremap <leader>gf :GFiles<CR>
 nnoremap <leader>gg :Files<CR>
 nnoremap <leader>sn :-1read $STARTANEW/snippets/
 nnoremap <leader>gp :.!gp<CR>
-nnoremap <leader>md :.!mdurl
+nnoremap <leader>mm :.!mdurl
 nnoremap <leader>o :on
-nnoremap <leader>trm :bo term<CR>
+nnoremap <leader>tt :bo term<CR>
 nnoremap <Leader>b :ls<CR>:b<Space>
 nnoremap <Leader>buf :.!yyy<CR>
 nnoremap <Leader>gbuf :r $STARTANEW/saved/buf<CR>

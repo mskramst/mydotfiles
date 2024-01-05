@@ -185,13 +185,14 @@ alias src='exec bash -l'     #reloads shell with all values (best)
 alias download='yt-dlp -f best'
 
 # software related 
-alias gs="git status"
-alias gadd="git add -A ."
-alias gc="git commit -m"
+alias status="git status"
+alias add="git add -A ."
+alias commit="git commit -m"
 alias push="git push origin main && echo 'pushing main to origin'"
 alias configpush='config push origin main'
 alias myctags='ctags -R .'
 alias pack='cat package.json'
+alias publish='npm publish --access=public'
 
 #docker
 
