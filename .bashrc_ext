@@ -167,7 +167,9 @@ alias cde='cd $CODE'
 alias gith='cd $GHREPOS'
 alias dlvids='cd //media/stuff/DATA/dlvids'
 alias mnt='cd /mnt/c/Users/m'
-alias reactapp='npx create-react-app my-app --template typescript'
+alias spa='npm create vite@latest'
+alias pn='pnpm'
+alias pnpmup='pnpm add -g pnpm'
 
 # editing config files
 alias bext='vim ~/.bashrc_ext'
