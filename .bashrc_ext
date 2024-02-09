@@ -170,6 +170,7 @@ alias mnt='cd /mnt/c/Users/m'
 alias spa='npm create vite@latest'
 alias pn='pnpm'
 alias pnpmup='pnpm add -g pnpm'
+alias pstart='pnpm start'
 
 # editing config files
 alias bext='vim ~/.bashrc_ext'
