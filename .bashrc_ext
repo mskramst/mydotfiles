@@ -1,3 +1,9 @@
+#  ----------------------------- setup -------------------------------
+# cut and move to to .bashrc to load this file
+#if [ -f ~/.bashrc_ext ]; then
+#   . ~/.bashrc_ext
+#fi
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
