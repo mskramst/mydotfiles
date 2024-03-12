@@ -113,8 +113,8 @@ interval=5
 # Date Time
 #
 [time]
-command=date '+%m-%d-%Y %H:%M'
-interval=5
+command=date '+%m-%d-%Y %I:%M'
+interval=60
 
 # Generic media player support
 #
@@ -142,6 +142,11 @@ interval=5
 command=$SCRIPT_DIR/temperature/temperature
 #label=TEMP
 #interval=10
+#
+[weather]
+command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
+interval=3600
+color=#A4C2F4#
 
 # Key indicators
 #
