@@ -164,6 +164,7 @@ alias duck='duck'
 alias gpt='mods'
 alias gptls='mods --list'
 alias gptshow='mods --show'
+alias jc='javac *.java && java Main'
 
 # common directories
 alias start='cd $STARTANEW'
