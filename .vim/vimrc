@@ -5,16 +5,16 @@
 
 syntax on
 filetype on                       "required
-filetype indent on
+"filetype indent on
 set nocompatible                  "be iMproved, required
 set showmatch                     "Convenient for showing the matching braces"
 set hidden                        "Allows for file buffers
 set wildmenu                      "Creates a wild menu for toggling between files
 set colorcolumn=80                "Create a clear 80 char limit for coding"
-set autoindent
-set nonu                            "Hide/Display line numbers"
+"set autoindent
+set nu                            "Hide/Display line numbers"
 set clipboard=unnamed
-"set norelativenumber              "Hide/Show line numbers and relative value
+set norelativenumber              "Hide/Show line numbers and relative value
                                   "  for easy navigation"
 set smartcase                     "Helps with searching text set noswapfile
 set history=10000                 "Creates a history of vim commands to search
@@ -68,7 +68,6 @@ Plug 'dense-analysis/ale'
 "{{Productivity}}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-
 
 "{{Syntax Highlighting and Colors}}
 Plug 'morhetz/gruvbox'
@@ -234,3 +233,4 @@ function! <SID>SynStack()
 endfunc
 endif
 
+nnoremap <leader>o o0<C-D>
