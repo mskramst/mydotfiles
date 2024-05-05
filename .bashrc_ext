@@ -16,8 +16,7 @@ esac
 
 # ------------------------ environmental variables -------------------------------
 
-#export USER="${USER:-$(whoami)}"
-source ~/.bash_user
+export USER="${USER:-$(whoami)}"
 export GITUSER="$USER"
 export REPOS="$HOME/repos"
 export GHREPOS="$REPOS/github.com/$GITUSER"
@@ -26,7 +25,7 @@ export SNIPPETS="$STARTANEW/snippets"
 export SCRIPTS="$STARTANEW/scripts"
 export MYGPT="$STARTANEW/scripts"
 export NOTES="$STARTANEW/writing/notes"
-export PATH="$STARTANEW/scripts:$STARTANEW/scripts/installers:$PATH"
+export PATH="$STARTANEW/scripts:$STARTANEW/scripts/installers:$STARTANEW/scripts/dev:$PATH"
 export DESKTOP="$HOME/Desktop"
 export DOCUMENTS="$HOME/Documents"
 export DOWNLOADS="$HOME/Downloads"
