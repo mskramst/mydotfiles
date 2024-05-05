@@ -36,6 +36,7 @@ alias gisthelp='cat $STARTANEW/docs/gists-help.txt'
 alias bext='vim ~/.bashrc_ext'
 alias valias='vim ~/.bash_aliases'
 alias vimc='vim ~/.vim/vimrc'
+alias aliases='vim ~/.bash_aliases'
 alias vimabbr='vim ~/.vim/vimabbrs.vim'
 alias i3conf='vim ~/.config/i3/config'
 alias bhist='vim ~/.bash_history'
@@ -85,7 +86,7 @@ alias comp='composer'
 alias autoload='composer dump-autoload -o'
 
 #python & vm
-alias py-act='. venv/bin/activate'
+alias act='. venv/bin/activate'
 alias deact='deactivate'
 
 # setup for syncing dot files to and from multiple computers
