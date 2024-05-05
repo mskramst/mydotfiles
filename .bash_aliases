@@ -34,6 +34,7 @@ alias gisthelp='cat $STARTANEW/docs/gists-help.txt'
 
 # editing config files
 alias bext='vim ~/.bashrc_ext'
+alias valias='vim ~/.bash_aliases'
 alias vimc='vim ~/.vim/vimrc'
 alias vimabbr='vim ~/.vim/vimabbrs.vim'
 alias i3conf='vim ~/.config/i3/config'
