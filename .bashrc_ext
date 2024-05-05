@@ -16,7 +16,8 @@ esac
 
 # ------------------------ environmental variables -------------------------------
 
-export USER="${USER:-$(whoami)}"
+#export USER="${USER:-$(whoami)}"
+source ~/.bash_user
 export GITUSER="$USER"
 export REPOS="$HOME/repos"
 export GHREPOS="$REPOS/github.com/$GITUSER"
