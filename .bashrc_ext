@@ -25,7 +25,7 @@ export SNIPPETS="$STARTANEW/snippets"
 export SCRIPTS="$STARTANEW/scripts"
 export MYGPT="$STARTANEW/scripts"
 export NOTES="$STARTANEW/writing/notes"
-export PATH="$STARTANEW/scripts:$STARTANEW/scripts/installers:$STARTANEW/scripts/dev:$PATH"
+export PATH="$STARTANEW/scripts:$STARTANEW/scripts/dev:$PATH"
 export DESKTOP="$HOME/Desktop"
 export DOCUMENTS="$HOME/Documents"
 export DOWNLOADS="$HOME/Downloads"
@@ -46,15 +46,14 @@ export GOPATH="$HOME/.local/bin"
 export GOBIN="$HOME/.local/bin"
 
 # -------------------------- color man pages -------------------------
-
-export LESS="-R"
-export LESS_TERMCAP_mb="[35m" # magenta
-export LESS_TERMCAP_md="[33m" # yellow
-export LESS_TERMCAP_me="" # "0m"
-export LESS_TERMCAP_se="" # "0m"
-export LESS_TERMCAP_so="[34m" # blue
-export LESS_TERMCAP_ue="" # "0m"
-export LESS_TERMCAP_us="[4m"  # underline
+ export LESS="-R"
+ export LESS_TERMCAP_mb="[35m" # magenta
+ export LESS_TERMCAP_md="[33m" # yellow
+ export LESS_TERMCAP_me="" # "0m"
+ export LESS_TERMCAP_se="" # "0m"
+ export LESS_TERMCAP_so="[34m" # blue
+ export LESS_TERMCAP_ue="" # "0m"
+ export LESS_TERMCAP_us="[4m"  # underline
 
 # ----------------------------- history -------------------------------
 
@@ -96,7 +95,6 @@ export CDPATH=.:\
 ~/Code\
 ~
 
-#mkdir -p "$SCRIPTS" &>/dev/null
 
 # ------------------------------- dircolors ------------------------------
 

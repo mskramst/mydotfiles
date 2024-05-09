@@ -5,6 +5,7 @@ alias ls='ls -h --color=auto'
 alias mkdir='mkdir -p'
 alias cp='cp -i'
 alias mv='mv -i'
+alias chmox='chmod +x'
 alias aptup='sudo apt-get update'
 alias aptupg="sudo apt-get update && sudo apt-get upgrade"
 alias used="du -sh"
@@ -20,7 +21,6 @@ alias jc='javac *.java && java Main'
 alias start='cd $STARTANEW'
 alias scripts='cd $SCRIPTS'
 alias snippets='cd $SNIPPETS'
-alias cde='cd $CODE'
 alias gith='cd $GHREPOS'
 alias dlvids='cd //media/stuff/DATA/dlvids'
 alias mnt='cd /mnt/c/Users/m'
@@ -33,22 +33,12 @@ alias gistls='gh gist ls'
 alias gisthelp='cat $STARTANEW/docs/gists-help.txt'
 
 # editing config files
-alias bext='vim ~/.bashrc_ext'
-alias valias='vim ~/.bash_aliases'
-alias vimc='vim ~/.vim/vimrc'
-alias aliases='vim ~/.bash_aliases'
-alias vimabbr='vim ~/.vim/vimabbrs.vim'
-alias i3conf='vim ~/.config/i3/config'
-alias bhist='vim ~/.bash_history'
-alias alac='vim ~/.config/alacritty/alacritty.yml'
-alias vimnotes='vim $STARTANEW/software/vim.md'
-alias nvimc='nvim ~/.config/nvim/init.lua'
-alias mynotes='vim $STARTANEW/mynotes.md'
 alias hl='highlight -O ansi'
 alias src='exec bash -l'     #reloads shell with all values (best)
 alias download='yt-dlp -f best'
 
-# software related 
+# setup for syncing dot files to and from multiple computers
+alias config='/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME' 
 
 # git
 alias status="git status"
@@ -89,12 +79,7 @@ alias autoload='composer dump-autoload -o'
 alias act='. venv/bin/activate'
 alias deact='deactivate'
 
-# setup for syncing dot files to and from multiple computers
-alias config='/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME' 
-
 #useful
-alias chmox='chmod +x'
-
 alias ytget="yt-dlp -x --audio-format mp3"
 alias yt="ytfzf -L"
 alias ytlist="mpv -fs --playlist=newplaylist"
