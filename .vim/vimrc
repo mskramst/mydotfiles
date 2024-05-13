@@ -81,7 +81,7 @@ Plug 'sheerun/vim-polyglot'
 
 "Plug 'StanAngeloff/php.vim'
 "Plug 'arnaud-lb/vim-php-namespace'
-"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 "Plug 'HerringtonDarkholme/yats.vim'  # Typescript support
 "Plug 'plasticboy/vim-markdown'
 "Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
