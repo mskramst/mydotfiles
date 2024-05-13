@@ -48,8 +48,9 @@ alias cfgpush='config push origin main'
 
 #tmux
 alias tls="tmux list-windows"
-alias tnot="tmux new-window && tmux rename-window -t 2 'notes'"
+alias tnot="tmux new -s work -d && tmux rename-window -t 1 'code' && tmux new-window && tmux rename-window -t 2 'run'"
 alias tdev="tmux new-window -t 3 && tmux rename-window -t 3 'dev';"
+alias tcode="tmux new -s work -d && && tmux rename-window"
 alias dev="tmux new -s dev -d"
 alias play="tmux new -s play -d"
 alias attach="tmux a -t"
