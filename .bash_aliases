@@ -25,6 +25,7 @@ alias dlvids='cd //media/stuff/DATA/dlvids'
 alias mnt='cd /mnt/c/Users/m'
 
 alias gistc='gh gist create -'
+alias newgist='gh gist create $STARTANEW/saved/gist'
 alias gistls='gh gist ls'
 alias gisthelp='cat $STARTANEW/docs/gists-help.txt'
 
@@ -42,7 +43,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
 alias status="git status"
 alias gita="git add -A ."
 alias gitc="git commit -m"
-alias gitac="git add -A . & git commit -m "
+alias gitac="git add -A . & git commit -m"
 alias gitp="git push origin main && echo 'pushing main to origin'"
 alias cfgpush='config push origin main'
 

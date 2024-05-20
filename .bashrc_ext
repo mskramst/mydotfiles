@@ -5,7 +5,7 @@
 #fi
 
 if [ -f ~/.bash_aliases ]; then
-   . ~/.bash_aliases
+   . "$HOME/.bash_aliases"
 fi
 
 # If not running interactively, don't do anything
@@ -100,7 +100,8 @@ export CDPATH=.:\
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    test -r "$HOME/.dircolors" && eval "$(dircolors -b ~/.dircolors)" 
+    test -r "$HOME/.dircolors" && eval "$(dircolors -b)"
     alias grep='grep --color=auto'
     alias ls='ls --color=auto'
 fi
@@ -139,7 +140,7 @@ export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
 
 # ------------------------------- completion -------------------------------
 
-source ~/.bash_git
+source "$HOME/.bash_git"
 
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
@@ -155,9 +156,9 @@ fi
 
 goup() {
   num=$1
-  while [ $num -ne 0  ];do
+  while [ "$num" -ne 0  ];do
     cd ..
-    num=$( expr $num - 1   )
+    num=$(( num - 1 ))
   done
 }
 
