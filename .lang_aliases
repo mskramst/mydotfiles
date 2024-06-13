@@ -6,7 +6,8 @@ alias pstart='pnpm start'
 alias pack='cat package.json'
 alias publish='npm publish --access=public'
 alias vpack='vim package.json'
-alias nextjs'pnpm create vite-app'
+alias viteup='pnpx create-vite@latest --template react-ts'
+alias nextjs='pnpm create vite-app'
 
 #java/kotlin
 alias gr='./gradlew'
