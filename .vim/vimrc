@@ -163,7 +163,7 @@ nnoremap <leader>bn :bn<CR>
 nnoremap <leader>tit :.!htitle<CR>
 nnoremap <leader>gf :GFiles<CR>
 nnoremap <leader>gg :Files<CR>
-nnoremap <leader>sn :-1read $STARTANEW/snippets/
+nnoremap <leader>xx :-1read $STARTANEW/snippets/
 nnoremap <leader>gp :.!gp<CR>
 nnoremap <leader>mm :.!mdurl
 nnoremap <leader>o :on
