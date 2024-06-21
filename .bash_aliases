@@ -60,3 +60,5 @@ alias attach="tmux a -t"
 alias ytget="yt-dlp -x --audio-format mp3"
 alias yt="ytfzf -L"
 alias ytlist="mpv -fs --playlist=newplaylist"
+
+alias stripws="sed -i 's/[[:space:]]*$//'"  #strip white spaces at end of line in files

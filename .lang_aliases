@@ -8,6 +8,7 @@ alias publish='npm publish --access=public'
 alias vpack='vim package.json'
 alias viteup='pnpx create-vite@latest --template react-ts'
 alias nextjs='pnpm create vite-app'
+alias bat='batcat'
 
 #java/kotlin
 alias gr='./gradlew'
