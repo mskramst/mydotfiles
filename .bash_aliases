@@ -21,6 +21,7 @@ alias start='cd $STARTANEW'
 alias scripts='cd $SCRIPTS'
 alias snippets='cd $SNIPPETS'
 alias gith='cd $GHREPOS'
+alias saved='cd $STARTANEW/saved'
 alias dlvids='cd //media/stuff/DATA/dlvids'
 alias mnt='cd /mnt/c/Users/m'
 

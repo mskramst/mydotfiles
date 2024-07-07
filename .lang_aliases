@@ -6,16 +6,13 @@ alias pstart='pnpm start'
 alias pack='cat package.json'
 alias publish='npm publish --access=public'
 alias vpack='vim package.json'
-<<<<<<< Updated upstream
 alias viteup='pnpx create-vite@latest --template react-ts'
 alias nextjs='pnpm create vite-app'
 alias viteapp='pnpm create vite@latest'
 alias nextjs='npx create-next-app@latest'
 alias bat='batcat'
-=======
 alias viteapp='pnpm create vite@latest'
 alias nextjs='npx create-next-app@latest'
->>>>>>> Stashed changes
 
 #java/kotlin
 alias gr='./gradlew'
