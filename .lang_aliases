@@ -1,4 +1,6 @@
 #programming specific
+
+#javascript
 alias spa='npm create vite@latest'
 alias pn='pnpm'
 alias pnpmup='pnpm add -g pnpm'
@@ -7,12 +9,9 @@ alias pack='cat package.json'
 alias publish='npm publish --access=public'
 alias vpack='vim package.json'
 alias viteup='pnpx create-vite@latest --template react-ts'
-alias nextjs='pnpm create vite-app'
-alias viteapp='pnpm create vite@latest'
 alias nextjs='npx create-next-app@latest'
+alias viteapp='pnpm create vite@latest'
 alias bat='batcat'
-alias viteapp='pnpm create vite@latest'
-alias nextjs='npx create-next-app@latest'
 
 #java/kotlin
 alias gr='./gradlew'
@@ -26,5 +25,7 @@ alias comp='composer'
 alias autoload='composer dump-autoload -o'
 
 #python & vm
-alias act='. venv/bin/activate'
+alias act='. dev/bin/activate'
 alias deact='deactivate'
+alias pipi='python3 -m pip install'
+alias pipu='python3 -m pip --upgrade pip'

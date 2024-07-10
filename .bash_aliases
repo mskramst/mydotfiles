@@ -22,6 +22,7 @@ alias scripts='cd $SCRIPTS'
 alias snippets='cd $SNIPPETS'
 alias gith='cd $GHREPOS'
 alias saved='cd $STARTANEW/saved'
+alias notes='cd $STARTANEW/writing/notes'
 alias dlvids='cd //media/stuff/DATA/dlvids'
 alias mnt='cd /mnt/c/Users/m'
 
@@ -61,5 +62,13 @@ alias attach="tmux a -t"
 alias ytget="yt-dlp -x --audio-format mp3"
 alias yt="ytfzf -L"
 alias ytlist="mpv -fs --playlist=newplaylist"
+# open the last note updated filename saved in this file each time note added
+alias last="vim $(cat $STARTANEW/last)"
+# open the last modified file in a directory
+alias vlast="vim $(ls -t | head -n1)"
+# save last cli cmd to file
+alias savelast='history -p !! > $STARTANEW/lastcmd'
+# cat the last saved buffer
+alias catbuf='cat $STARTANEW/saved/buf'
 
 alias stripws="sed -i 's/[[:space:]]*$//'"  #strip white spaces at end of line in files
