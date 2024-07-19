@@ -63,7 +63,7 @@ alias ytget="yt-dlp -x --audio-format mp3"
 alias yt="ytfzf -L"
 alias ytlist="mpv -fs --playlist=newplaylist"
 # open the last note updated filename saved in this file each time note added
-alias last="vim $(cat $STARTANEW/last)"
+#alias last="vim $(cat $STARTANEW/last)"
 # open the last modified file in a directory
 alias vlast="vim $(ls -t | head -n1)"
 # save last cli cmd to file
