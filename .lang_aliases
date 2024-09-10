@@ -29,3 +29,6 @@ alias act='. dev/bin/activate'
 alias deact='deactivate'
 alias pipi='python3 -m pip install'
 alias pipu='pip --upgrade pip'
+
+#golang
+alias vm='vim main.go'
