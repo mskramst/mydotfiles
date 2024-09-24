@@ -1,4 +1,0 @@
-#!/bin/bash	
-IFS= read -r line1 
-IFS= read -r line2; 
-echo "[${line1}](${line2})"
