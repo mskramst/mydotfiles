@@ -19,6 +19,7 @@ alias grt='gradle test'
 alias grr='gradle run'
 alias gtasks='gradle tasks'
 alias jc='javac *.java && java Main'
+alias dcd='cd dailycoding'
 
 #php
 alias comp='composer'

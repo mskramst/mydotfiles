@@ -172,6 +172,8 @@ nnoremap <Leader>b :ls<CR>:b<Space>
 nnoremap <Leader>put :.!yyy<CR>
 nnoremap <Leader>get :r $STARTANEW/saved/buf<CR>
 nnoremap q: <nop>
+inoremap <Leader>st System.out.println(
+inoremap <Leader>sf System.out.printf
 
 "{{Git melated commands}}
 nmap <leader>gs :G<CR>
@@ -222,8 +224,12 @@ function TurnOffCaps()
     endif
 endfunction
 
+function! Printline()
+  return "System.out.println("
+endfunction
 " Displays all the syntax rules for current position, useful
 " When writing Vimscript syntax plugins
+
 if has("syntax")
 function! <SID>SynStack()
   if !exists("*synstack")

@@ -27,7 +27,13 @@ ab :ttl: text-transform: lowercase;
 ab :df: display: flex;<CR>align-items: center;<CR>
 ab :media: @media only screen and (max-width: scss-var){<CR><CR>}<CR>
 ab :svg: <svg class=""><CR><use xlink:href="{2}#{3}"><CR></use></svg>
+
+"{{ language specific }}
+"java
+ab sout =Printline()
 ab :psvm: public static void main (String [] args) {
 ab :fori: for (int i=0; i < value; i++) {
-ab :sout: System.out.println(
+
+"js
 ab _csl console.log(
+	

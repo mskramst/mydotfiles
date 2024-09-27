@@ -11,9 +11,8 @@ alias aptupg="sudo apt-get update && sudo apt-get upgrade"
 alias used="du -sh"
 alias gs="goog"   
 alias ws="websearch" 
-alias gpt='mods'
-alias gptls='mods --list'
-alias gptshow='mods --show'
+alias modsls='mods --list'
+alias modsh='mods --show'
 alias lang="source ~/.lang_aliases"
 
 # common directories
