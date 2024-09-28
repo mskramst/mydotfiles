@@ -1,4 +1,3 @@
-
 " A customized .vimrc for vim (https://www.vim.org/)
 
 "----------------------- General settings ---------------------------------
@@ -71,6 +70,7 @@ Plug 'junegunn/fzf.vim'
 
 "{{Syntax Highlighting and Colors}}
 Plug 'morhetz/gruvbox'
+"Plug 'cormacrelf/vim-colors-github'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -100,16 +100,51 @@ if has('termguicolors')
 endif
 
 "{{Theming}}
+function! Gruvbox()
+  colorscheme gruvbox
+  let g:lightline = { 'colorscheme': 'gruvbox' }
+  let g:airline_theme='gruvbox'
+  let g:airline#extensions#tabline#enabled = 1
+  let g:gruvbox_contrast_dark = 'dark'
+  set background=dark
+endfunc
 
-colorscheme gruvbox
-let g:gruvbox_contrast_dark = 'dark'
-let g:airline_theme = 'gruvbox'
-let g:lightline = { 'colorscheme': 'gruvbox' }
-"let g:airline#extensions#tabline#enabled = 1
+command! Gruv call Gruvbox()
 
+call Gruvbox()
+
+function! Github()
+  colorscheme github
+  let g:lightline = { 'colorscheme': 'murmur' }
+  let g:airline_theme='murmur'
+  let g:airline#extensions#tabline#enabled = 1
+  "let g:github_colors_soft = 1
+  set background=light
+endfunc
+
+function! Ayu()
+  colorscheme ayu 
+  let g:lightline = { 'colorscheme': 'minimalist' }
+  let g:airline_theme='minimalist'
+  let g:airline#extensions#tabline#enabled = 1
+  set background=dark
+endfunc
+
+function! Quiet()
+  colorscheme quietlight
+  let g:lightline = { 'colorscheme': 'murmur' }
+  let g:airline_theme='murmur'
+  let g:airline#extensions#tabline#enabled = 1
+  set background=light
+endfunc
+
+command! Gruv call Gruvbox()
+command! Github call Github()
+command! Ayu call Ayu()
+command! Quiet call Quiet()
+
+call Gruvbox()
 "{{For dark version}}
-
-set background=dark
 set term=xterm
 
 let mapleader = " "
