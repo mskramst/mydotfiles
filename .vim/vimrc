@@ -89,7 +89,7 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 "Plug 'vim-pandoc/vim-pandoc'
 "Plug 'vim-pandoc/vim-pandoc-syntax'
 "Plug 'tpope/vim-fugitive'
-"Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim'
 
 call plug#end()
 
