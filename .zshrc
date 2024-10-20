@@ -189,3 +189,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 if [ -e /home/mskramst/.nix-profile/etc/profile.d/nix.sh ]; then . /home/mskramst/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
