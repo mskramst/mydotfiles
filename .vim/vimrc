@@ -90,11 +90,11 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 
-"if has('termguicolors')
-"  set termguicolors
-"endif
+if has('termguicolors')
+  set termguicolors
+endif
 
-"highlight Terminal guibg='#282828' guifg='#ebdbb2'
+highlight Terminal guibg='#282828' guifg='#ebdbb2'
 
 "{{For dark version}}
 set term=xterm
@@ -146,7 +146,8 @@ nnoremap <leader>bp :bp<CR>
 nnoremap <leader>bn :bn<CR> "next tab
 nnoremap <leader>gf :GFiles<CR> "view files in git repo
 nnoremap <leader>gg :Files<CR> "view files in directories
-nnoremap <leader>xx :-1read $STARTANEW/snippets/ "load a snippet by name
+nnoremap <leader>xx :-1read $STARTANEW/snippets/
+nnoremap <leader>abbr :e ~/.vim/vimabbrs.vim<CR>
 nnoremap <leader>gp :.!gp<CR>
 nnoremap <leader>gp :.!gpmac<CR>
 nnoremap <leader>mm :.!mdurl

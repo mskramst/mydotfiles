@@ -218,3 +218,9 @@ mkcd() {
 export -f gccd
 export -f getip
 
+#test to see if it will autocomplete java files
+_vim_java_completion() {
+  COMPREPLY=( $(compgen -f -- "$2" | grep '\.(java|ts|js)$') )
+}
+
+complete -F _vim_java_completion vim
