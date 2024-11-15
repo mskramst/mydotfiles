@@ -9,9 +9,9 @@ set showmatch                     "Convenient for showing the matching braces"
 set hidden                        "Allows for file buffers
 set wildmenu                      "Creates a wild menu for toggling between files
 set colorcolumn=80                "Create a clear 80 char limit for coding"
-set nu                            "Hide/Display line numbers"
+"set nu                            "Hide/Display line numbers"
 set clipboard=unnamed
-set norelativenumber              "Hide/Show line numbers and relative value
+set relativenumber              "Hide/Show line numbers and relative value
                                   "  for easy navigation"
 set smartcase                     "Helps with searching text set noswapfile
 set history=10000                 "Creates a history of vim commands to search
@@ -132,10 +132,12 @@ let g:ale_sign_warning = '*'
 " File specific / skeleton files when a new file with name created. 
 au BufNewFile README.md 0r $STARTANEW/snippets/skele/readme.md
 au BufNewFile Main.java 0r $STARTANEW/snippets/skele/Main.java
+
 augroup markdown_skeleton
    autocmd!
    autocmd BufNewFile *.md execute '0r ' . expand('STARTANEW/snippets/skele/markdown.md')
 augroup END
+
 au BufRead,BufNewFile *.md setlocal textwidth=80
 
 "{{Personal Quick Actions}}
@@ -144,8 +146,8 @@ nnoremap <leader>vim :e ~/.vim/vimrc<CR>
 nnoremap <leader>not :e $STARTANEW/software/vim.md<CR>
 nnoremap <leader>bp :bp<CR>
 nnoremap <leader>bn :bn<CR> "next tab
-nnoremap <leader>gf :GFiles<CR> "view files in git repo
-nnoremap <leader>gg :Files<CR> "view files in directories
+nnoremap <leader>gf :GFiles<CR>
+nnoremap <leader>gg :Files<CR>
 nnoremap <leader>xx :-1read $STARTANEW/snippets/
 nnoremap <leader>abbr :e ~/.vim/vimabbrs.vim<CR>
 nnoremap <leader>gp :.!gp<CR>
