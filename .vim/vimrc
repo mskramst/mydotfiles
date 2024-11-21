@@ -135,7 +135,7 @@ au BufNewFile Main.java 0r $STARTANEW/snippets/skele/Main.java
 
 augroup markdown_skeleton
    autocmd!
-   autocmd BufNewFile *.md execute '0r ' . expand('STARTANEW/snippets/skele/markdown.md')
+   autocmd BufNewFile *.md execute '0r ' . expand('$STARTANEW/snippets/skele/markdown.md')
 augroup END
 
 au BufRead,BufNewFile *.md setlocal textwidth=80

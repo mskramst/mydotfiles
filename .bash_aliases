@@ -17,6 +17,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
 # search
 alias gs="goog"   
 alias ws="websearch" 
+alias ol="ollama run llama3"
 
 # mods charmbracelet - open ai
 alias modsls='mods --list'
@@ -62,6 +63,7 @@ alias yt3="yt-dlp -x --audio-format mp3" # mp3
 alias yt="ytfzf -L"
 alias ytlist="mpv -fs --playlist=newplaylist"
 alias yt4='yt-dlp -f best' # mp4
+alias entrgo='ls *.go | entr -r go run main.go'
 
 # open the last modified file in a directory
 alias vlast="vim $(ls -t | head -n1)"
