@@ -4,8 +4,8 @@
 #   . ~/.bashrc_ext
 #fi
 
-if [ -f ~/.bash_aliases ]; then
-   . "$HOME/.bash_aliases"
+if [ -f "$HOME/.bash_aliases" ]; then
+   source "$HOME/.bash_aliases"
 fi
 
 # If not running interactively, don't do anything
@@ -16,6 +16,18 @@ esac
 
 # ------------------------ environmental variables -------------------------------
 
+#update path
+base_path="$STARTANEW/scripts"
+
+#Array of directories with only unique part of the path
+dirs=("dev" "coding" "")
+
+#Loop to add directories to PATH
+for dir in "${dirs[@]}"; do
+    export PATH=$PATH:$base_path/$dir
+done
+
+export TEMPLATES="$HOME/Templates"
 export USER="${USER:-$(whoami)}"
 export GITUSER="$USER"
 export REPOS="$HOME/repos"
@@ -26,17 +38,11 @@ export SCRIPTS="$STARTANEW/scripts"
 export NOTES="$STARTANEW/writing/notes"
 export TODODIR="$STARTANEW/todo"
 export BACKUPDIR="$STARTANEW/backup"
-export PATH="$STARTANEW/scripts:$STARTANEW/scripts/dev:$STARTANEW/scripts/coding:$PATH"
+#export PATH="$STARTANEW/scripts:$STARTANEW/scripts/dev:$STARTANEW/scripts/coding:$PATH"
 export DESKTOP="$HOME/Desktop"
 export DOCUMENTS="$HOME/Documents"
 export DOWNLOADS="$HOME/Downloads"
-export TEMPLATES="$HOME/Templates"
-export PUBLIC="$HOME/Public"
-export PRIVATE="$HOME/Private"
 export PICTURES="$HOME/Pictures"
-export MUSIC="$HOME/Music"
-export VIDEOS="$HOME/Videos"
-export CODE="$HOME/Code"
 export HRULEWIDTH=73
 export EDITOR=vim
 export EDITOR_PREFIX=vi
@@ -87,6 +93,8 @@ pathprepend() {
     export PATH="${ARG}${PATH:+":${PATH}"}"
   done
 }
+
+pathappend "$HOME/scripts"
 
 export CDPATH=.:\
 ~/repos/github.com:\
