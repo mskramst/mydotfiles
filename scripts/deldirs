@@ -1,0 +1,4 @@
+#!/bin/bash	
+# deletes all non hidden directories in folder - interactive for safety
+find . -maxdepth 1 -type d ! -name ".*" -exec rm -ri {} +
+

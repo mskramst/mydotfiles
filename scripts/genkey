@@ -1,0 +1,10 @@
+#!/bin/bash	
+# generate a ssh key
+if [ $# -ne 2 ]
+then
+		echo "How to use:"
+		echo "./genkey <email>"
+		exit 1
+fi
+
+ssh-keygen -t rsa -b 4096 -C "$1"

@@ -1,0 +1,8 @@
+#!/bin/bash
+## uses regex to check if current git repo needs a pull
+str=$(git status) 
+if [[ $str =~ .*Your\ branch\ is\ behind.*by.*commits,\ and\ can\ be\ fast-forwarded ]]; then
+    echo `date "+%Y-%m-%d %H:%M:%S"` "Needs pull"
+else
+    echo "Code is up to date"
+fi

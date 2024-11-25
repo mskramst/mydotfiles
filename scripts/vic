@@ -1,0 +1,4 @@
+#!/bin/sh
+# finds the bash script and opens it in vi
+cmd=$(command -v "$1")
+test -n "$cmd" && exec vi "$cmd"

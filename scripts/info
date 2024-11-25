@@ -1,0 +1,4 @@
+#!/bin/sh
+# used to view functionality of a script anywhere (2nd line)
+cmd=$(command -v "$1")
+test -n "$cmd" && exec sed -n '2p' "$cmd"

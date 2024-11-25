@@ -1,0 +1,14 @@
+#!/usr/bin/python3
+# A simple python script to search google for a CLI term
+import webbrowser, sys
+
+if (len(sys.argv) > 2):
+    print('include one search term')
+    sys.exit()
+elif (len(sys.argv) > 1):
+    searchTerm = sys.argv[1]
+    urlToSearch = 'http://www.google.com/search?q=' + sys.argv[1]
+else:
+    urlToSearch = 'http://www.google.com'
+
+webbrowser.open(urlToSearch)

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# prints a specified string a certain number of times without a trailing newline.
+
+echon () {
+  declare i
+  for ((i=0; i<${2:-1}; i++)); do echo -n "$1"; done
+}
+
+echon "$@"

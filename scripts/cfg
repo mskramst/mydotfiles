@@ -1,0 +1,30 @@
+#!/bin/bash	
+# edit config files with menu
+echo "Editing config files"
+echo "1) .bashrc"
+echo "2) .bashrc_ext"
+echo "3) .bash_aliases"
+echo "4) .config/.vim/vimrc"
+echo "5) .config/nvim.init"
+echo "6) .config/tmux/tmux.conf"
+echo "0) exit"
+read -r -p "Enter a number: " number
+
+if [ "$number" == 0 ]; then
+    exit;
+fi
+
+if [ -z "$number" ]; then
+    number=1
+fi
+
+files=(".bashrc" ".bashrc_ext" ".bash_aliases" ".vim/vimrc" "nvim/m"
+    ".config/nvim/init.lua" ".config/kitty/kitty.conf" ".lang_aliases"
+    ".config/tmux/tmux.conf")
+
+cd ~ || exit
+
+filenum=$(( number - 1 ))
+vim "${files[filenum]}"
+
+
