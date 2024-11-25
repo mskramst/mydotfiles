@@ -1,5 +1,6 @@
---require("lazy").setup("plugins")
+require("config.lazy")
 require "user.colorschemes"
 require "user.mappings"
-require "user.lsp-config"
-require'lspconfig'.pyright.setup{}
+require('lspconfig').gopls.setup({})
+--require "user.lsp-config"
+--require'lspconfig'.pyright.setup{}
