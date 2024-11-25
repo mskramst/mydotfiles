@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 # This saves text to a file called buf in the saved folder
-true > "$STARTANEW/saved/buf"
+if [ ! -d ~/.saved ]; then
+    mkdir ~/.saved
+fi
+
+true > ~/.saved/buf
 while IFS= read -r line;do
-  echo "$line" >> "$STARTANEW/saved/buf"
+  echo "$line" >> ~/.saved/buf
   echo "$line"
 done
+
 
