@@ -27,6 +27,7 @@ alias lang="source ~/.lang_aliases"
 # commonly used directories
 alias start='cd $STARTANEW'
 alias scripts='cd $SCRIPTS'
+alias pscripts='cd $PSCRIPTS'
 alias snippets='cd $SNIPPETS'
 alias gith='cd $GHREPOS'
 alias saved='cd $STARTANEW/saved'

@@ -1,4 +1,4 @@
-require "user.plugins"
+--require("lazy").setup("plugins")
 require "user.colorschemes"
 require "user.mappings"
 require "user.lsp-config"
