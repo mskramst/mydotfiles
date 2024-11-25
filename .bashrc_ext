@@ -20,7 +20,7 @@ esac
 base_path="$STARTANEW/scripts"
 
 #Array of directories with only unique part of the path
-dirs=("dev" "coding" "")
+dirs=("dev" "coding" "gpt" "")
 
 #Loop to add directories to PATH
 for dir in "${dirs[@]}"; do
