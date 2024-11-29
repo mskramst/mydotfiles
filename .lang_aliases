@@ -1,4 +1,5 @@
-#programming specific
+#!/bin/bash
+# programming specific aliases (not needed on all systems)
 
 #javascript
 alias spa='npm create vite@latest'
@@ -33,3 +34,4 @@ alias pipu='pip --upgrade pip'
 
 #golang
 alias vm='vim main.go'
+alias gor='go run main.go'
