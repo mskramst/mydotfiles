@@ -1,0 +1,9 @@
+#!/bin/bash	
+# allows me to compile and run kotlin files with specific name
+if [ "$#" -ne 1 ]; then
+  echo "Usage: $0 <name>"
+  exit 1
+fi
+
+projName=$1
+kotlinc "${projName}".kt && kotlin "${projName}Kt"
