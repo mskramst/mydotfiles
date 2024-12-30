@@ -13,6 +13,7 @@ alias viteup='pnpx create-vite@latest --template react-ts'
 alias nextjs='npx create-next-app@latest'
 alias viteapp='pnpm create vite@latest'
 alias bat='batcat'
+alias podat='podman start -a'
 
 #java/kotlin
 alias gr='./gradlew'

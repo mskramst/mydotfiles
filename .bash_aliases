@@ -68,6 +68,7 @@ alias entrgo='ls *.go | entr -r go run main.go'
 alias oll='ollama run llama3.2:latest'
 
 # open the last modified file in a directory
+alias nv='nvim'
 alias vlast="vim $(ls -t | head -n1)"
 
 # save last cli cmd to file
