@@ -131,7 +131,7 @@ let g:ale_sign_warning = '*'
 
 " File specific / skeleton files when a new file with name created. 
 au BufNewFile README.md 0r $STARTANEW/snippets/skele/readme.md
-au BufNewFile Main.java 0r $STARTANEW/snippets/skele/Main.java
+au BufNewFile *.java 0r $STARTANEW/snippets/skele/Main.java
 
 augroup markdown_skeleton
    autocmd!
@@ -145,7 +145,7 @@ nnoremap <leader>so :so %<CR>
 nnoremap <leader>vim :e ~/.vim/vimrc<CR>
 nnoremap <leader>not :e $STARTANEW/software/vim.md<CR>
 nnoremap <leader>bp :bp<CR>
-nnoremap <leader>bn :bn<CR> "next tab
+nnoremap <leader>bn :bn<CR>
 nnoremap <leader>gf :GFiles<CR>
 nnoremap <leader>gg :Files<CR>
 nnoremap <leader>xx :-1read $STARTANEW/snippets/
