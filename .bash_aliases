@@ -10,6 +10,7 @@ alias chmox='chmod +x'
 alias aptup='sudo apt-get update'
 alias aptupg="sudo apt-get update && sudo apt-get upgrade"
 alias src='exec bash -l'     #reloads shell with all values (best)
+alias info="sed -n '2p'"
 
 # setup for syncing dot files to and from multiple computers
 alias config='/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME' 
