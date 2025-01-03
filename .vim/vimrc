@@ -1,4 +1,4 @@
-" A customized .vimrc for vim (https://www.vim.org/)
+"  customize .vimrc for vim (https://www.vim.org/)
 
 "----------------------- General settings ---------------------------------
 
@@ -160,6 +160,8 @@ nnoremap <Leader>put :.!yyy<CR>
 nnoremap <Leader>get :r $STARTANEW/saved/buf<CR>
 nnoremap q: <nop>
 
+
+nnoremap <Leader>out System.out.println(
 " Markdown specific
 map <leader>code i```<CR><CR>```
 
