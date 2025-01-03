@@ -1,3 +1,4 @@
+#!/bin/bash
 #  ----------------------------- setup -------------------------------
 # cut and move to to .bashrc to load this file
 #if [ -f ~/.bashrc_ext ]; then
@@ -46,8 +47,8 @@ export DOWNLOADS="$HOME/Downloads"
 export PICTURES="$HOME/Pictures"
 export HRULEWIDTH=73
 export EDITOR=vim
-export EDITOR_PREFIX=vi
-export VISUAL=vi
+export EDITOR_PREFIX=vim
+export VISUAL=vim
 export TERM=xterm-256color #controversial?
 export GOPRIVATE="github.com/$GITUSER"
 export GOPATH="$HOME/.local/bin"
@@ -133,7 +134,7 @@ case "$TERM" in
 esac
 #${debian_chroot:+($debian_chroot)}
 if [ "$color_prompt" = yes ]; then
-	PS1='\n$winidx (\[\033[01;33m\]\u\033[01;37m\])
+	PS1='\n$winidx \[\033[01;37m\](\[\033[01;33m\]\u\033[01;37m\])
   \[\033[01;37m\]\W\[\033[00m\]/ \[\033[01;33m\] $(__git_ps1) \[\033[01;37m\]->> \[\033[00;37m\]  '
   else 
 	PS1='\u@\h:\w\$ '
