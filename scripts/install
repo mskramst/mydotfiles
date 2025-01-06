@@ -1,6 +1,5 @@
 #!/bin/bash
-# install everything
-# function for program 1
+# install everything - firefox, chrome, gh, mods
 install_firefox() {
     echo "Installing firefox..."
     type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
