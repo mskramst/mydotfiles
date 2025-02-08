@@ -31,6 +31,7 @@ alias scripts='cd $SCRIPTS'
 alias pscripts='cd $PSCRIPTS'
 alias snippets='cd $SNIPPETS'
 alias gith='cd $GHREPOS'
+alias gitrv='git remote -v'
 alias saved='cd $STARTANEW/saved'
 alias notes='cd $STARTANEW/writing/notes'
 
