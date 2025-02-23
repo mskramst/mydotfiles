@@ -158,6 +158,7 @@ nnoremap <leader>tt :term
 nnoremap <Leader>b :ls<CR>:b<Space>
 nnoremap <Leader>put :.!yyy<CR>
 nnoremap <Leader>get :r $STARTANEW/saved/buf<CR>
+nnoremap <Leader>ff vipgq
 nnoremap q: <nop>
 
 
