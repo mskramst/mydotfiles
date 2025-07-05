@@ -64,7 +64,7 @@ alias attach="tmux a -t"
 #useful
 alias yt3="yt-dlp -x --audio-format mp3" # mp3
 alias yt="ytfzf -L"
-alias ytlist="mpv -fs --playlist=newplaylist"
+alias ytlist="mpv -fs --playlist=current"
 alias yt4='yt-dlp -f best' # mp4
 alias entrgo='ls *.go | entr -r go run main.go'
 alias oll='ollama run llama3.2:latest'
